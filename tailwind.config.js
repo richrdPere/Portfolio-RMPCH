@@ -20,7 +20,8 @@ export default {
       },
 
       backgroundImage: {
-        "open-menu"
+        "open-menu": "url(../public/icons/menu.svg)",
+        "close-menu": "url(../public/icons/close.svg)"
       }
     },
   },
