@@ -1,12 +1,19 @@
 import React from "react";
 
+// CSS
+import "../css/portfolio.css";
+
 // eslint-disable-next-line react/display-name
 const Portfolio = React.forwardRef((props, ref) => {
   return (
     <section className="py-16" ref={ref}>
-      <h2 className="text-4xl text-center mb-16 md:text-5xl">What i do - Portfolio</h2>
+      <h2 className="text-4xl text-center mb-16 md:text-5xl">
+        What i do - Portfolio
+      </h2>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 ">
+      {/* ANTERIOR */}
+      {/* <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 ">
+        
         <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,6 +31,7 @@ const Portfolio = React.forwardRef((props, ref) => {
           </h3>
         </article>
 
+        
         <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +46,7 @@ const Portfolio = React.forwardRef((props, ref) => {
           </h3>
         </article>
 
+        
         <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,6 +57,130 @@ const Portfolio = React.forwardRef((props, ref) => {
           </svg>
 
           <h3 className="text-2xl text-gray-color font-medium">Web Design</h3>
+        </article>
+
+        
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="100"
+            height="100"
+            viewBox="0 0 50 50"
+            className="icons w-24"
+          >
+            <path d="M 24.5 2 C 15.800781 2 14 6.492188 14 9.09375 L 14 14 L 24 14 L 24 15 L 9.09375 15 C 5.792969 15 2 17.601563 2 25 C 2 32.398438 5.792969 35 9.09375 35 L 15 35 L 15 29 C 15 26.800781 16.800781 25 19 25 L 31 25 C 32.699219 25 34 23.699219 34 22 L 34 9.09375 C 34 5.59375 30.699219 2 24.5 2 Z M 20 7 C 21.101563 7 22 7.898438 22 9 C 22 10.101563 21.101563 11 20 11 C 18.898438 11 18 10.101563 18 9 C 18 7.898438 18.898438 7 20 7 Z M 35 15 L 35 22 C 35 24.199219 33.199219 26 31 26 L 19 26 C 17.300781 26 16 27.300781 16 29 L 16 40.90625 C 16 44.40625 19.300781 48 25.5 48 C 34.199219 48 36 43.507813 36 40.90625 L 36 36 L 26 36 L 26 35 L 40.90625 35 C 44.207031 35 48 32.398438 48 25 C 48 17.601563 44.207031 15 40.90625 15 Z M 30 39 C 31.101563 39 32 39.898438 32 41 C 32 42.101563 31.101563 43 30 43 C 28.898438 43 28 42.101563 28 41 C 28 39.898438 28.898438 39 30 39 Z"></path>
+          </svg>
+
+          <h3 className="text-2xl text-gray-color font-medium">
+            Python Developer
+          </h3>
+        </article>
+
+        
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="100"
+            height="100"
+            viewBox="0 0 50 50"
+            className="icons w-24"
+          >
+            <path d="M 24.929688 2.0019531 C 24.819813 2.0024531 24.709016 2.0206406 24.603516 2.0566406 L 3.671875 9.3417969 C 3.227875 9.4957969 2.9498125 9.93925 3.0078125 10.40625 L 6.3164062 37.529297 C 6.3554062 37.850297 6.5450781 38.133109 6.8300781 38.287109 L 24.478516 47.878906 C 24.626516 47.959906 24.791078 48 24.955078 48 C 25.120078 48 25.286547 47.958953 25.435547 47.876953 L 43.173828 38.154297 C 43.455828 37.999297 43.647547 37.717438 43.685547 37.398438 L 46.992188 10.277344 C 47.050187 9.8083437 46.769312 9.3609844 46.320312 9.2089844 L 25.253906 2.0527344 C 25.148906 2.0177344 25.039562 2.0014531 24.929688 2.0019531 z M 25 7 L 38 35 L 33.5625 35 L 30.78125 29.007812 L 19.21875 29.007812 L 16.4375 35 L 12 35 L 25 7 z M 25 16.5 L 21.080078 25 L 28.919922 25 L 25 16.5 z"></path>
+          </svg>
+
+          <h3 className="text-2xl text-gray-color font-medium">Angular</h3>
+        </article>
+
+    
+      </div> */}
+
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 ">
+        {/* 1.- Proyecto */}
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+          <figure className="">
+            {/* Imagen */}
+            <div className="gallery__containerImagen">
+              <a href="#" className="gallery__link">
+                <img
+                  className="gallery__image"
+                  src="img/proyecto-1.jpg"
+                  alt="1ra imagen de la galeria"
+                />
+              </a>
+            </div>
+            {/* Titular */}
+            <figcaption className="gallery__title ">
+              <span className="subtitle__color">Cards - Rick and Morty</span>
+            </figcaption>
+          </figure>
+        </article>
+
+        {/* 2.- Proyecto */}
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+          <figure className="">
+            {/* Imagen */}
+            <div className="gallery__containerImagen">
+              <a href="#" className="gallery__link">
+                <img
+                  className="gallery__image"
+                  src="img/proyecto-2.jpg"
+                  alt="1ra imagen de la galeria"
+                />
+              </a>
+            </div>
+            {/* Titular */}
+            <figcaption className="gallery__title ">
+              <span className="subtitle__color">
+                Campeones del Mundo - Venta de Productos
+              </span>
+            </figcaption>
+          </figure>
+        </article>
+
+        {/* 3.- Proyecto */}
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+          <figure className="">
+            {/* Imagen */}
+            <div className="gallery__containerImagen">
+              <a href="#" className="gallery__link">
+                <img
+                  className="gallery__image"
+                  src="img/proyecto-3.jpg"
+                  alt="1ra imagen de la galeria"
+                />
+              </a>
+            </div>
+            {/* Titular */}
+            <figcaption className="gallery__title ">
+              <span className="subtitle__color">
+                GuitarLa - Venta de Guitarras
+              </span>
+            </figcaption>
+          </figure>
+        </article>
+
+        {/* 4.- Proyecto */}
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+          <figure className="">
+            {/* Imagen */}
+            <div className="gallery__containerImagen">
+              <a href="#" className="gallery__link">
+                <img
+                  className="gallery__image"
+                  src="img/proyecto-4.jpg"
+                  alt="1ra imagen de la galeria"
+                />
+              </a>
+            </div>
+            {/* Titular */}
+            <figcaption className="gallery__title ">
+              <span className="subtitle__color">BloqCafé - Cafeteria</span>
+            </figcaption>
+          </figure>
         </article>
       </div>
     </section>

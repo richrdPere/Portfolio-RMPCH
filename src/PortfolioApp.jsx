@@ -23,6 +23,13 @@ import Herosection from "./components/Herosection";
 
 function PortfolioApp() {
   // UseRef (Para refernciar elementos dentro del Lading Page)
+
+  // 0.- PARA HERO SECTION
+  const heroSectionRef = useRef(null);
+
+  const scrollToHeroSection = () => {
+    heroSectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   // 1.- PARA ABOUT
   const aboutMeRef = useRef(null);
 
@@ -65,9 +72,11 @@ function PortfolioApp() {
         scrollToPortfolio={scrollToPortfolio}
         scrollToContact={scrollToContact}
         scrollToSkill={scrollToSkill}
+        scrollToHeroSection={scrollToHeroSection}
+        ref={heroSectionRef}
       />
 
-      <Herosection/>
+      <Herosection ref={heroSectionRef}/>
 
       <main>
         {/* 1.- About Me */}
