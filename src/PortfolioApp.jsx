@@ -1,7 +1,7 @@
 // React
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 
-// React-router-doom 
+// React-router-doom
 import {
   Routes,
   Route,
@@ -15,71 +15,75 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import About from "./components/About";
-import Proyects from "./components/Proyects";
+import Portfolio from "./components/Portfolio";
 import Skills from "./components/Skills";
 import ContactMe from "./components/ContactMe";
 import Curriculum from "./components/Curriculum";
+import Herosection from "./components/Herosection";
 
 function PortfolioApp() {
-
   // UseRef (Para refernciar elementos dentro del Lading Page)
-  // PARA ABOUT
+  // 1.- PARA ABOUT
   const aboutMeRef = useRef(null);
 
   const scrollToAbout = () => {
-    aboutMeRef.current.scrollIntoView({behavior: 'smooth'})
-  }
-  // PARA CONTACTO
+    aboutMeRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  // 2.- PARA CURRICULUM
+  const curriculumMeRef = useRef(null);
+
+  const scrollToCurriculum = () => {
+    curriculumMeRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // 3.- PARA SKILL
+  const skillRef = useRef(null);
+
+  const scrollToSkill = () => {
+    skillRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // 4.- PARA PORTFOLIO
+  const portfolioRef = useRef(null);
+
+  const scrollToPortfolio = () => {
+    portfolioRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // 5.- PARA CONTACTO
   const contactMeRef = useRef(null);
 
   const scrollToContact = () => {
-    contactMeRef.current.scrollIntoView({behavior: 'smooth'})
-  }
+    contactMeRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="w-[90%] mx-auto overflow-hidden max-w-screen-xl">
+      <Header
+        scrollToAbout={scrollToAbout}
+        scrollToCurriculum={scrollToCurriculum}
+        scrollToPortfolio={scrollToPortfolio}
+        scrollToContact={scrollToContact}
+        scrollToSkill={scrollToSkill}
+      />
 
-      <Header scrollToAbout={scrollToAbout} scrollToContact={scrollToContact}/>
+      <Herosection/>
 
       <main>
+        {/* 1.- About Me */}
+        <About ref={aboutMeRef} />
 
-        <Routes>
-          {/* About Me */}
-          <Route
-            path="/About"
-            element={
-              <>
-                <About ref={aboutMeRef}/>
-              </>
-            }
-          ></Route>
+        {/* 2.- Curriculum */}
+        <Curriculum ref={curriculumMeRef} />
 
-          {/* Curriculum */}
-          <Route path="/Curriculum"
-          element={
-            <Curriculum/>
-          }></Route>
-          
-          {/* What i do */}
-          <Route
-            path="/Proyects"
-            element={
-              <>
-              <Proyects/>
-              </>
-            }
-          ></Route>
-          
+        {/* 3.- Skills */}
+        {/* <Skills ref={skillRef} /> */}
 
-        </Routes>
-               
-        {/* Skills */}
-        <Skills/>
+        {/* 4.- What i do */}
+        <Portfolio ref={portfolioRef}/>
 
-        {/* Contact me */}
-        <ContactMe ref={contactMeRef}/>
-
-        
+        {/* 5.- Contact me */}
+        <ContactMe ref={contactMeRef} />
       </main>
 
       <Footer />

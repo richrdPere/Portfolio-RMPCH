@@ -1,5 +1,6 @@
 import React from "react";
 
+// eslint-disable-next-line react/display-name
 const About = React.forwardRef((props, ref) => {
   return (
     <section ref={ref} className="py-16 text-center">

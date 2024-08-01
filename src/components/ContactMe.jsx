@@ -1,11 +1,12 @@
 import React from "react";
 
+// eslint-disable-next-line react/display-name
 const ContactMe = React.forwardRef((props, ref) => {
   return (
-    <section className="py-16">
+    <section className="py-16" ref={ref}>
       <h2 className="text-4xl mb-16 text-center md:text-5xl">Get in Touch</h2>
 
-      <form className="flex flex-wrap justify-between gap-8 px-1 max-w-screen-lg mx-auto" ref={ref}>
+      <form className="flex flex-wrap justify-between gap-8 px-1 max-w-screen-lg mx-auto" >
         <input
           type="text"
           placeholder="Name"
