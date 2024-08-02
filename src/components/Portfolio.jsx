@@ -100,7 +100,7 @@ const Portfolio = React.forwardRef((props, ref) => {
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 ">
         {/* 1.- Proyecto */}
-        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent movingToTop">
           <figure className="">
             {/* Imagen */}
             <div className="gallery__containerImagen">
@@ -120,7 +120,7 @@ const Portfolio = React.forwardRef((props, ref) => {
         </article>
 
         {/* 2.- Proyecto */}
-        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent movingToTop">
           <figure className="">
             {/* Imagen */}
             <div className="gallery__containerImagen">
@@ -142,7 +142,7 @@ const Portfolio = React.forwardRef((props, ref) => {
         </article>
 
         {/* 3.- Proyecto */}
-        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent movingToTop">
           <figure className="">
             {/* Imagen */}
             <div className="gallery__containerImagen">
@@ -164,7 +164,7 @@ const Portfolio = React.forwardRef((props, ref) => {
         </article>
 
         {/* 4.- Proyecto */}
-        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent">
+        <article className="bg-card-color py-12 px-8 border-b-2 border-transparent movingToTop">
           <figure className="">
             {/* Imagen */}
             <div className="gallery__containerImagen">
