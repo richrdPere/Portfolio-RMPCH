@@ -1,11 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 
+// CSS
+import '../../css/certificates.css'
+
 // Components (Componentes)
 import Modal from "../Modal/Modal";
 import CertificateImage from "./CertificateImage";
 
-const Certificates = () => {
+const Certificates = React.forwardRef((props, ref) => {
   // Modal
   const [showModal, setShowModal] = useState(false);
 
@@ -18,7 +21,7 @@ const Certificates = () => {
   };
 
   return (
-    <div className="resume__certificates">
+    <section className="resume__certificates" ref={ref}>
       <section className="text-center">
         <header className="resume__subheader mt-5">
           <h2 className="resume_subtitle ">
@@ -52,10 +55,10 @@ const Certificates = () => {
           </article>
 
           {showModal && (
-              <Modal>
-                <CertificateImage onClose={handleCloseModal} />
-              </Modal>
-            )}
+            <Modal>
+              <CertificateImage onClose={handleCloseModal} />
+            </Modal>
+          )}
 
           {/* 2do Certificado */}
           <article className="certificates__certificate">
@@ -79,8 +82,8 @@ const Certificates = () => {
           </article>
         </section>
       </section>
-    </div>
+    </section>
   );
-};
+});
 
 export default Certificates;

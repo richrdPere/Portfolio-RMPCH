@@ -5,9 +5,11 @@ import React from "react";
 import "../css/curriculum.css";
 
 // Components (Componentes)
-import Certificates from "./Curriculum/Certificates";
-import Skills from "./Curriculum/Skills";
-import Training from "./Curriculum/Training";
+import Certificates from "../CertificatesMe/Certificates";
+// import Skills from "./Curriculum/Skills";
+// import Training from "./Curriculum/Training";
+
+
 
 const Curriculum = React.forwardRef((props, ref) => {
   return (
@@ -16,19 +18,18 @@ const Curriculum = React.forwardRef((props, ref) => {
 
       <div className="bg-card-color py-12 px-8 text-left text-gray-color grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-12 place-items-center">
         <section className="content__page content__resume">
-
           {/* HABILIDADES Y EXPERIENCIA */}
-          <div className="w-full flex flex-row">
-            {/* Lado Izquierdo */}
+          {/* <div className="w-full flex flex-row">
+            
             <Training/>
-
-            {/* Lado Derecho */}
+            
             <Skills/>
-          </div>
+          </div> */}
+
+          
 
           {/* CERTIFICADOS */}
-          <Certificates/>
-          
+          {/* <Certificates /> */}
         </section>
       </div>
     </section>

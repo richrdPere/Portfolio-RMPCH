@@ -4,7 +4,7 @@ import React from "react";
 // eslint-disable-next-line react/prop-types
 const CertificateImage = ({ onClose }) => {
   return (
-    <div className=" p-4 w-full max-w-7xl max-h-full">
+    <div className="p-4 w-full max-w-5xl max-h-full">
       {/* Modal content */}
       <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
         {/* Modal header */}
@@ -39,7 +39,7 @@ const CertificateImage = ({ onClose }) => {
         </div>
 
         {/* Modal body */}
-        <div className="flex items-center justify-center p-4 md:p-5 space-y-4 ">
+        <div className="flex items-center justify-center p-4 md:p-5 space-y-4 w-fit">
           <img className="h-auto w-10/12 rounded-lg" src="img/certificados/Certificado-Web_Scrapping.jpg" alt="Certificate - Web Scrapping"/>
         </div>
         

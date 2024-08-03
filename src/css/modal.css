@@ -3,26 +3,24 @@
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  /* height: auto; */
 
   position: fixed;
   z-index: 999;
 }
 
 .modal__content {
-  color: var(--blanco);
-  padding: 20px;
+
+  /* padding: 2rem; */
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  min-width: 89%;
-  min-height: 90%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background: transparent;
+  background-color: transparent;
 }
 
 .modal__button {

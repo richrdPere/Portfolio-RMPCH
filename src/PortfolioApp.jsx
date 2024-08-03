@@ -16,10 +16,11 @@ import Footer from "./components/Footer";
 
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
-import Skills from "./components/Skills";
+import Skills from "./components/Skills/Skills";
 import ContactMe from "./components/ContactMe";
-import Curriculum from "./components/Curriculum";
+//import Curriculum from "./components/Curriculum";
 import Herosection from "./components/Herosection";
+import Certificates from "./components/CertificatesMe/Certificates";
 
 function PortfolioApp() {
   // UseRef (Para refernciar elementos dentro del Lading Page)
@@ -44,20 +45,27 @@ function PortfolioApp() {
   };
 
   // 3.- PARA SKILL
+  const certificateRef = useRef(null);
+
+  const scrollToCertificate = () => {
+    certificateRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // 4.- PARA SKILL
   const skillRef = useRef(null);
 
   const scrollToSkill = () => {
     skillRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  // 4.- PARA PORTFOLIO
+  // 5.- PARA PORTFOLIO
   const portfolioRef = useRef(null);
 
   const scrollToPortfolio = () => {
     portfolioRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  // 5.- PARA CONTACTO
+  // 6.- PARA CONTACTO
   const contactMeRef = useRef(null);
 
   const scrollToContact = () => {
@@ -73,25 +81,29 @@ function PortfolioApp() {
         scrollToContact={scrollToContact}
         scrollToSkill={scrollToSkill}
         scrollToHeroSection={scrollToHeroSection}
+        scrollToCertificate={scrollToCertificate}
         ref={heroSectionRef}
       />
 
-      <Herosection ref={heroSectionRef}/>
+      <Herosection ref={heroSectionRef} />
 
       <main>
         {/* 1.- About Me */}
         <About ref={aboutMeRef} />
 
         {/* 2.- Curriculum */}
-        <Curriculum ref={curriculumMeRef} />
+        {/* <Curriculum ref={curriculumMeRef} /> */}
 
         {/* 3.- Skills */}
-        {/* <Skills ref={skillRef} /> */}
+        <Skills ref={skillRef} />
 
-        {/* 4.- What i do */}
-        <Portfolio ref={portfolioRef}/>
+        {/* 4.- Certificates */}
+        <Certificates ref={certificateRef} />
 
-        {/* 5.- Contact me */}
+        {/* 5.- What i do */}
+        <Portfolio ref={portfolioRef} />
+
+        {/* 6.- Contact me */}
         <ContactMe ref={contactMeRef} />
       </main>
 

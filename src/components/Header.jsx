@@ -13,6 +13,7 @@ const Header = React.forwardRef((props, ref) => {
     scrollToContact,
     scrollToSkill,
     scrollToHeroSection,
+    scrollToCertificate,
   } = props;
 
   // Navigate
@@ -43,23 +44,32 @@ const Header = React.forwardRef((props, ref) => {
             </button>
           </li>
 
-          <li>
+          {/* <li>
             <button
               onClick={scrollToCurriculum}
               className=" h-9 w-20 hover:bg-green-color flex items-center justify-center"
             >
               Curriculum
             </button>
+          </li> */}
+
+          <li>
+            <button
+              onClick={scrollToSkill}
+              className=" h-9 w-20 hover:bg-green-color flex items-center justify-center"
+            >
+              Skills
+            </button>
           </li>
 
-          {/* <li>
-          <button
-            onClick={scrollToSkill}
-            className=" h-9 w-20 hover:bg-green-color flex items-center justify-center"
-          >
-            Skills
-          </button>
-        </li> */}
+          <li>
+            <button
+              onClick={scrollToCertificate}
+              className=" h-9 w-20 hover:bg-green-color flex items-center justify-center"
+            >
+              Certificates
+            </button>
+          </li>
 
           <li>
             <button
