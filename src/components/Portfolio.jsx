@@ -6,11 +6,14 @@ import "../css/portfolio.css";
 // eslint-disable-next-line react/display-name
 const Portfolio = React.forwardRef((props, ref) => {
   return (
-    <section className="py-16" ref={ref}>
-      <h2 className="text-4xl text-center mb-16 md:text-5xl">
-        What i do - Portfolio
-      </h2>
+    <section className="py-16 text-center" ref={ref}>
+      <header className="resume__subheader mt-5">
+          <h2 className="resume_subtitle ">
+            <span className="text-4xl  mb-16 md:text-5xl">What i do - <span className="text-green-color">Portfolio</span></span>
+          </h2>
+        </header>
 
+    
       {/* ANTERIOR */}
       {/* <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 ">
         
@@ -101,8 +104,7 @@ const Portfolio = React.forwardRef((props, ref) => {
       <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 ">
         {/* 1.- Proyecto */}
         <article className="bg-card-color py-12 px-8 border-b-2 border-transparent movingToTop">
-          <figure className="">
-            {/* Imagen */}
+          <figure>
             <div className="gallery__containerImagen">
               <a href="#" className="gallery__link">
                 <img
@@ -112,10 +114,32 @@ const Portfolio = React.forwardRef((props, ref) => {
                 />
               </a>
             </div>
-            {/* Titular */}
+
             <figcaption className="gallery__title ">
               <span className="subtitle__color">Cards - Rick and Morty</span>
             </figcaption>
+
+            <div className="grid grid-cols-2 gap-4 content-evenly">
+              <div className="grid content-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="p-2 text-center transition duration-150 rounded-lg bg-indigo-600 hover:bg-indigo-600/80"
+                >
+                  Github
+                </a>
+              </div>
+
+              <div className="grid content-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="p-2 text-center transition duration-150 rounded-lg bg-green-color hover:bg-green-color/80"
+                >
+                  Live demo
+                </a>
+              </div>
+            </div>
           </figure>
         </article>
 
@@ -138,6 +162,29 @@ const Portfolio = React.forwardRef((props, ref) => {
                 Campeones del Mundo - Venta de Productos
               </span>
             </figcaption>
+
+            {/* Links */}
+            <div className="grid grid-cols-2 gap-4 content-evenly">
+              <div className="grid content-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="p-2 text-center transition duration-150 rounded-lg bg-indigo-600 hover:bg-indigo-600/80"
+                >
+                  Github
+                </a>
+              </div>
+
+              <div className="grid content-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="p-2 text-center transition duration-150 rounded-lg bg-green-color hover:bg-green-color/80"
+                >
+                  Live demo
+                </a>
+              </div>
+            </div>
           </figure>
         </article>
 
@@ -160,6 +207,28 @@ const Portfolio = React.forwardRef((props, ref) => {
                 GuitarLa - Venta de Guitarras
               </span>
             </figcaption>
+            {/* Links */}
+            <div className="grid grid-cols-2 gap-4 content-evenly">
+              <div className="grid content-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="p-2 text-center transition duration-150 rounded-lg bg-indigo-600 hover:bg-indigo-600/80"
+                >
+                  Github
+                </a>
+              </div>
+
+              <div className="grid content-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="p-2 text-center transition duration-150 rounded-lg bg-green-color hover:bg-green-color/80"
+                >
+                  Live demo
+                </a>
+              </div>
+            </div>
           </figure>
         </article>
 
@@ -180,6 +249,28 @@ const Portfolio = React.forwardRef((props, ref) => {
             <figcaption className="gallery__title ">
               <span className="subtitle__color">BloqCafé - Cafeteria</span>
             </figcaption>
+            {/* Links */}
+            <div className="grid grid-cols-2 gap-4 content-evenly">
+              <div className="grid content-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="p-2 text-center transition duration-150 rounded-lg bg-indigo-600 hover:bg-indigo-600/80"
+                >
+                  Github
+                </a>
+              </div>
+
+              <div className="grid content-center">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="p-2 text-center transition duration-150 rounded-lg bg-green-color hover:bg-green-color/80"
+                >
+                  Live demo
+                </a>
+              </div>
+            </div>
           </figure>
         </article>
       </div>

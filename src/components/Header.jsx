@@ -4,6 +4,7 @@ import React from "react";
 // React-router-dom
 import { useNavigate, Link } from "react-router-dom";
 
+// eslint-disable-next-line react/display-name
 const Header = React.forwardRef((props, ref) => {
   // Props
   const {
@@ -24,7 +25,13 @@ const Header = React.forwardRef((props, ref) => {
       <header className="flex h-20 items-center justify-around bg-transparend fixed top-0 left-0 w-full z-50">
         <button onClick={scrollToHeroSection} className="w-1/2 max-w-[300px]">
           {/* <img src="icons/logo.svg" className="block w-full" /> */}
-          <h1 className="text-3xl md:text-4xl">Richard Pereira.</h1>
+          <header className="resume__subheader mt-5">
+            <h1 className="resume_subtitle ">
+              <span className="text-3xl md:text-4xl hover:text-green-color">
+                Richard Pereira.
+              </span>
+            </h1>
+          </header>
         </button>
 
         <input type="checkbox" id="menu" className="peer/menu hidden" />
@@ -38,7 +45,7 @@ const Header = React.forwardRef((props, ref) => {
           <li>
             <button
               onClick={scrollToAbout}
-              className=" h-9 w-20 hover:bg-green-color flex items-center justify-center"
+              className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
               About Me
             </button>
@@ -56,7 +63,7 @@ const Header = React.forwardRef((props, ref) => {
           <li>
             <button
               onClick={scrollToSkill}
-              className=" h-9 w-20 hover:bg-green-color flex items-center justify-center"
+              className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
               Skills
             </button>
@@ -65,7 +72,7 @@ const Header = React.forwardRef((props, ref) => {
           <li>
             <button
               onClick={scrollToCertificate}
-              className=" h-9 w-20 hover:bg-green-color flex items-center justify-center"
+              className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
               Certificates
             </button>
@@ -74,7 +81,7 @@ const Header = React.forwardRef((props, ref) => {
           <li>
             <button
               onClick={scrollToPortfolio}
-              className=" h-9 w-20 hover:bg-green-color flex items-center justify-center"
+              className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
               Portfolio
             </button>
@@ -83,7 +90,7 @@ const Header = React.forwardRef((props, ref) => {
           <li>
             <button
               onClick={scrollToContact}
-              className=" h-9 w-25 hover:bg-green-color flex items-center justify-center"
+              className=" h-9 w-21 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
               Contact Me
             </button>

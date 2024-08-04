@@ -4,17 +4,23 @@ import React from "react";
 const About = React.forwardRef((props, ref) => {
   return (
     <section ref={ref} className="py-16 text-center">
-      <h2 className="text-4xl md:text-5xl">About</h2>
-      <p className="mt-8 mb-10 leading-normal text-gray-color md:w-4/5 md:mx-auto">
-        Soy Richard Mikhael Pereira Chinchero, soy un Programador Fullstack
-        orientado al diseño Front-end y con conocimientos en servidor y bases de
-        datos orientados al diseño Back-end. Poseo experiencia en multiples
-        herramientas y tecnologias como Javascript, React, Redux, Node.js, SQL,
-        CSS y python. Aunque mi enfoque esta orientado al desarrollo Front-End,
-        con habilidades solidas en la parte de Back-End.
+      <header className="resume__subheader mt-5">
+        <h2 className="resume_subtitle">
+          <span className="text-4xl mb-16 md:text-5xl">About <span className="text-green-color">Me</span></span>
+        </h2>
+      </header>
+
+      <p className="mt-8 mb-10 text-xl leading-normal text-gray-color md:w-4/5 md:mx-auto">
+        <span className="text-green-color">HOLA A TODOS,</span> mi nombre es Richard Mikhael Pereira Chinchero, soy un
+        Programador Fullstack orientado al diseño Front-end y con conocimientos
+        en servidor y bases de datos orientados al diseño Back-end. Poseo
+        experiencia en multiples herramientas y tecnologias como Javascript,
+        React, Redux, Node.js, SQL, CSS y python. Aunque mi enfoque esta
+        orientado al desarrollo Front-End, con habilidades solidas en la parte
+        de Back-End.
       </p>
 
-      <p className="mt-5 mb-10 leading-normal text-gray-color md:w-4/5 md:mx-auto">
+      <p className="mt-5 mb-10 text-xl leading-normal text-gray-color md:w-4/5 md:mx-auto">
         Me descaco por ser una persona tranquila, proactica y responsable con
         una gran capacidad para trabajar en equipo, compartir mis conocimientos
         y aprender nuevas cosas. Mi tiempo como practicante profesional en
@@ -24,7 +30,7 @@ const About = React.forwardRef((props, ref) => {
         tareas.
       </p>
 
-      <p className="mt-5 mb-16 leading-normal text-gray-color md:w-4/5 md:mx-auto">
+      <p className="mt-5 mb-16 text-xl leading-normal text-gray-color md:w-4/5 md:mx-auto">
         Deseo seguir creciendo profesionalmente, conocer nuevas cosas, enfrentar
         nuevos desafios y contribuir al exito de los proyectos en los que
         participe. Estoy siempre explorando mejores alternativas y practicando
@@ -32,7 +38,6 @@ const About = React.forwardRef((props, ref) => {
       </p>
 
       <div className="grid gap-8 justify-center justify-items-center md:grid-cols-3">
-
         {/* Email */}
         <article className="w-max grid justify-items-center">
           <div className="icons-container">
@@ -62,7 +67,7 @@ const About = React.forwardRef((props, ref) => {
           </div>
 
           <h3 className="text-2xl mt-4 mb-2">Twitter</h3>
-          <p className="font-light">@alexcgdesign.</p>
+          <p className="font-light">@richrdPere321.</p>
         </article>
 
         {/* Github */}

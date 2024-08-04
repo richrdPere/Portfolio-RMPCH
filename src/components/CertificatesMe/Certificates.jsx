@@ -8,6 +8,7 @@ import '../../css/certificates.css'
 import Modal from "../Modal/Modal";
 import CertificateImage from "./CertificateImage";
 
+// eslint-disable-next-line react/display-name
 const Certificates = React.forwardRef((props, ref) => {
   // Modal
   const [showModal, setShowModal] = useState(false);
@@ -22,14 +23,14 @@ const Certificates = React.forwardRef((props, ref) => {
 
   return (
     <section className="resume__certificates" ref={ref}>
-      <section className="text-center">
+      <section className="py-16 text-center">
         <header className="resume__subheader mt-5">
           <h2 className="resume_subtitle ">
-            <span className="subtitle__color">Certificados</span>
+            <span className="text-4xl mb-16 md:text-5xl">My <span className="text-green-color">Certificates</span></span>
           </h2>
         </header>
 
-        <section className="certificates__container ">
+        <section className="mt-12 grid gap-8 max-w-md mx-auto md:grid-flow-col md:max-w-none auto-cols-fr ">
           {/* 1er Certificado */}
           <article
             className="certificates__certificate"

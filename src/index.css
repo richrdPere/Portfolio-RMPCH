@@ -111,3 +111,29 @@
     transform: translateY(-0.5rem);
     box-shadow: 0 18px 24px -5px rgba(250, 248, 248, 0.15);
   }
+
+  /* Icons */
+  .icono__containerL {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* background-color: yellow; */
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .icono__fluidL{
+    height: 50px;
+    width: 50px;
+    margin: 20px;
+    display: flex;
+   /* background-color: orange;*/
+  }
+
+  /* UTILITIES*/
+  .no-padding {
+    padding: 0;
+  }
+  .no-margin {
+    margin: 0;
+  }

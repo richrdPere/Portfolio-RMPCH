@@ -1,15 +1,6 @@
 // React
 import React, { useRef } from "react";
 
-// React-router-doom
-import {
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-  Navigate,
-} from "react-router-dom";
-
 // Components (Componentes)
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -21,6 +12,7 @@ import ContactMe from "./components/ContactMe";
 //import Curriculum from "./components/Curriculum";
 import Herosection from "./components/Herosection";
 import Certificates from "./components/CertificatesMe/Certificates";
+import DarkMode from "./components/DarkMode/DarkMode"; 
 
 function PortfolioApp() {
   // UseRef (Para refernciar elementos dentro del Lading Page)
@@ -44,7 +36,7 @@ function PortfolioApp() {
     curriculumMeRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  // 3.- PARA SKILL
+  // 3.- PARA CERTIFICATES
   const certificateRef = useRef(null);
 
   const scrollToCertificate = () => {
@@ -74,6 +66,8 @@ function PortfolioApp() {
 
   return (
     <div className="w-[90%] mx-auto overflow-hidden max-w-screen-xl">
+      <DarkMode/>
+      
       <Header
         scrollToAbout={scrollToAbout}
         scrollToCurriculum={scrollToCurriculum}
@@ -85,7 +79,9 @@ function PortfolioApp() {
         ref={heroSectionRef}
       />
 
-      <Herosection ref={heroSectionRef} />
+      <Herosection 
+        scrollToContact={scrollToContact} 
+      />
 
       <main>
         {/* 1.- About Me */}
