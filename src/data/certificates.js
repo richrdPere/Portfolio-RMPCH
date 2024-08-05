@@ -1,6 +1,6 @@
 export const certificates = [
 	{
-		id: 1,
+		id: 10,
 		title: 'Desarrollo Full Stack',
 		description:
 			'Con un total de +800 horas cursadas en tecnologias como HMTL, CSS, javaScript, React, Node.js, Express y base de datos.',
@@ -10,7 +10,7 @@ export const certificates = [
 		date: '02 de Agosto - 2024',
 	},
 	{
-		id: 2,
+		id: 9,
 		title: 'Base de Datos, SQL y MYSQL',
 		description:
 			'Con un total de 50 horas cursadas equivalentes a tres (3) creditos academicos, realizados del 05 de juntio al 09 de julio del 2024.',
@@ -20,7 +20,7 @@ export const certificates = [
 		date: '09 de Julio - 2024',
 	},
 	{
-		id: 3,
+		id: 8,
 		title: 'Auditoria de Ciberseguridad con NIST',
 		description:
 			'Duración: 28 horas académicas',
@@ -30,7 +30,7 @@ export const certificates = [
 		date: '02 de Octubre - 2023',
 	},
 	{
-		id: 4,
+		id: 7,
 		title: 'Soporte Técnico a Computadoras en Entornos Corporativos',
 		description:
 			'Duración: 10.5 horas académicas',
@@ -40,8 +40,8 @@ export const certificates = [
 		date: '22 de Enero - 2024',
 	},
 	{
-		id: 5,
-		title: 'RPA - Másater Automatizacion de Procesos con UiPath [2023]',
+		id: 6,
+		title: 'RPA - Máster Automatizacion de Procesos con UiPath [2023]',
 		description:
 			'Duración: 4 horas académicas',
 		category: 'RPA',
@@ -50,7 +50,7 @@ export const certificates = [
 		date: '20 de Diciembre - 2023',
 	},
 	{
-		id: 6,
+		id: 5,
 		title: 'Curso de Reparación de Laptops',
 		description:
 			'Duración: 6 horas académicas',
@@ -60,7 +60,7 @@ export const certificates = [
 		date: '10 de Junio - 2022',
 	},
 	{
-		id: 7,
+		id: 4,
 		title: 'Curso maestro de Web Scraping: Extracción de Datos de la Web',
 		description:
 			'Duración: 16 horas académicas',
@@ -70,8 +70,8 @@ export const certificates = [
 		date: '28 de Setiembre - 2023',
 	},
 	{
-		id: 8,
-		title: 'Data Carving',
+		id: 3,
+		title: 'Recuperación de Datos',
 		description:
 			'Duración: 3 horas académicas',
 		category: 'Technical support',
@@ -80,7 +80,7 @@ export const certificates = [
 		date: '06 de Diciembre - 2023',
 	},
 	{
-		id: 9,
+		id: 2,
 		title: 'Reparación de PC de cero a Experto',
 		description:
 			'Duración: 24 horas académicas',
@@ -90,7 +90,7 @@ export const certificates = [
 		date: '30 de Noviembre - 2023',
 	},
 	{
-		id: 10,
+		id: 1,
 		title: 'Electronica Básica y General',
 		description:
 			'Duración: 8 horas académicas',
