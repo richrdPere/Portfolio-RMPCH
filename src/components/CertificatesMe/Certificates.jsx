@@ -2,23 +2,35 @@
 import React, { useState } from "react";
 
 // CSS
-import '../../css/certificates.css'
+import "../../css/certificates.css";
 
 // Components (Componentes)
+import Carrusel from "../Carrusel/Carrusel";
 import Modal from "../Modal/Modal";
 import CertificateImage from "./CertificateImage";
 
 // eslint-disable-next-line react/display-name
 const Certificates = React.forwardRef((props, ref) => {
-  // Modal
+  // Props
+  // eslint-disable-next-line react/prop-types
+  const { certificates } = props;
+
+  // Carrusel
+  const carruselCertificates = [...certificates, ...certificates];
+
+  // States
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const handleOpenModal = () => {
-    setShowModal(true);
-  };
-
+  // Funciones
   const handleCloseModal = () => {
     setShowModal(false);
+    setSelectedCertificate(null);
+  };
+
+  const handleCardClick = (certificate) => {
+    setSelectedCertificate(certificate);
+    setShowModal(true);
   };
 
   return (
@@ -26,62 +38,39 @@ const Certificates = React.forwardRef((props, ref) => {
       <section className="py-16 text-center">
         <header className="resume__subheader mt-5">
           <h2 className="resume_subtitle ">
-            <span className="text-4xl mb-16 md:text-5xl">My <span className="text-green-color">Certificates</span></span>
+            <span className="text-4xl mb-16 md:text-5xl">
+              My <span className="text-green-color">Certificates</span>
+            </span>
           </h2>
         </header>
 
-        <section className="mt-12 grid gap-8 max-w-md mx-auto md:grid-flow-col md:max-w-none auto-cols-fr ">
-          {/* 1er Certificado */}
-          <article
-            className="certificates__certificate"
-            onClick={handleOpenModal}
-          >
-            <div className="certificate__logo">
-              <img
-                className="certificate__image"
-                src="img/certificado-1.png"
-                alt="certificado 1"
-              />
+        {/* Carrusel */}
+        <div className="container my-5">
+          <div className="overflow-hidden w-full">
+            <div className="flex whitespace-nowrap animate-scroll">
+              {carruselCertificates.map((certificate, index) => (
+                <Carrusel
+                  key={index}
+                  array={certificate}
+                  onClick={() => handleCardClick(certificate)}
+                  isSelected={selectedCertificate === certificate}
+                />
+              ))}
             </div>
+          </div>
+        </div>
 
-            <div className="certificate__content">
-              <h4 className="certificate__title text-left">
-                <span className="subtitle__white">
-                  Master en PHP, SQL, POO, MVC, Laravel, Symfony, Wordpress
-                </span>
-              </h4>
-              <span className="certificate__id">Id Verificación: 7891</span>
-              <span className="certificates__date">10 Junio 2024</span>
-            </div>
-          </article>
-
-          {showModal && (
-            <Modal>
-              <CertificateImage onClose={handleCloseModal} />
-            </Modal>
-          )}
-
-          {/* 2do Certificado */}
-          <article className="certificates__certificate">
-            <div className="certificate__logo">
-              <img
-                className="certificate__image"
-                src="img/certificado-1.png"
-                alt="certificado 1"
-              />
-            </div>
-
-            <div className="certificate__content">
-              <h4 className="certificate__title text-left">
-                <span className="subtitle__white">
-                  Master en Pruebas Tecnicas: +70 Nuevos Ejercicios de Código
-                </span>
-              </h4>
-              <span className="certificate__id">Id Verificación: 12235</span>
-              <span className="certificates__date">10 Mayo 2025</span>
-            </div>
-          </article>
-        </section>
+        {/* Modal */}
+        {showModal && (
+          <Modal>
+            <CertificateImage 
+              onClose={handleCloseModal} 
+              image={selectedCertificate.image} 
+              title={selectedCertificate.title}
+              category={selectedCertificate.category}
+            />
+          </Modal>
+        )}
       </section>
     </section>
   );

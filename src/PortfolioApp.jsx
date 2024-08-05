@@ -1,5 +1,5 @@
 // React
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 // Components (Componentes)
 import Header from "./components/Header";
@@ -14,7 +14,12 @@ import Herosection from "./components/Herosection";
 import Certificates from "./components/CertificatesMe/Certificates";
 import DarkMode from "./components/DarkMode/DarkMode"; 
 
+// Data (Datos)
+import { certificates } from "./data/certificates";
+
 function PortfolioApp() {
+
+
   // UseRef (Para refernciar elementos dentro del Lading Page)
 
   // 0.- PARA HERO SECTION
@@ -66,7 +71,7 @@ function PortfolioApp() {
 
   return (
     <div className="w-[90%] mx-auto overflow-hidden max-w-screen-xl">
-      <DarkMode/>
+      {/* <DarkMode/> */}
       
       <Header
         scrollToAbout={scrollToAbout}
@@ -94,7 +99,7 @@ function PortfolioApp() {
         <Skills ref={skillRef} />
 
         {/* 4.- Certificates */}
-        <Certificates ref={certificateRef} />
+        <Certificates certificates={certificates} ref={certificateRef} />
 
         {/* 5.- What i do */}
         <Portfolio ref={portfolioRef} />

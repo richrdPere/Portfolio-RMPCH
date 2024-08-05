@@ -2,7 +2,7 @@
 import React from "react";
 
 // eslint-disable-next-line react/prop-types
-const CertificateImage = ({ onClose }) => {
+const CertificateImage = ({ onClose, image, title, category }) => {
   return (
     <div className="p-4 w-full max-w-5xl max-h-full">
       {/* Modal content */}
@@ -10,7 +10,10 @@ const CertificateImage = ({ onClose }) => {
         {/* Modal header */}
         <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Terms of Service
+            {`${title}`} - {" "}
+            <span className="text-green-color font-semibold ">
+              {`${category}`}
+            </span>
           </h3>
 
           <button
@@ -40,9 +43,12 @@ const CertificateImage = ({ onClose }) => {
 
         {/* Modal body */}
         <div className="flex items-center justify-center p-4 md:p-5 space-y-4 w-fit">
-          <img className="h-auto w-10/12 rounded-lg" src="img/certificados/Certificado-Web_Scrapping.jpg" alt="Certificate - Web Scrapping"/>
+          <img
+            className="h-auto w-10/12 rounded-lg"
+            src={`${image}`}
+            alt={`${title}`}
+          />
         </div>
-        
       </div>
     </div>
   );
