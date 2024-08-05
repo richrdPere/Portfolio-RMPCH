@@ -1,5 +1,5 @@
 // React
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 // Components (Componentes)
 import Header from "./components/Header";
@@ -12,15 +12,23 @@ import ContactMe from "./components/ContactMe";
 //import Curriculum from "./components/Curriculum";
 import Herosection from "./components/Herosection";
 import Certificates from "./components/CertificatesMe/Certificates";
-import DarkMode from "./components/DarkMode/DarkMode"; 
+import DarkMode from "./components/DarkMode/DarkMode";
+
+// Languages
+
 
 // Data (Datos)
 import { certificates } from "./data/certificates";
 
 function PortfolioApp() {
+  // Use states
+  const [language, setLanguage] = useState("es"); // Idioma predeterminado
 
+  const handleLanguageChange = () => {
+    setLanguage((prevLanguage) => (prevLanguage === "es" ? "en" : "es"));
+  };
 
-  // UseRef (Para refernciar elementos dentro del Lading Page)
+  // UseRef (Para referenciar elementos dentro del Lading Page)
 
   // 0.- PARA HERO SECTION
   const heroSectionRef = useRef(null);
@@ -72,7 +80,7 @@ function PortfolioApp() {
   return (
     <div className="w-[90%] mx-auto overflow-hidden max-w-screen-xl">
       {/* <DarkMode/> */}
-      
+
       <Header
         scrollToAbout={scrollToAbout}
         scrollToCurriculum={scrollToCurriculum}
@@ -84,9 +92,7 @@ function PortfolioApp() {
         ref={heroSectionRef}
       />
 
-      <Herosection 
-        scrollToContact={scrollToContact} 
-      />
+      <Herosection scrollToContact={scrollToContact} />
 
       <main>
         {/* 1.- About Me */}

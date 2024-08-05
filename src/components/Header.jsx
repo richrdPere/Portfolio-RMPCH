@@ -4,6 +4,9 @@ import React from "react";
 // React-router-dom
 import { useNavigate, Link } from "react-router-dom";
 
+// Languaje
+import { useTranslation } from "react-i18next";
+
 // eslint-disable-next-line react/display-name
 const Header = React.forwardRef((props, ref) => {
   // Props
@@ -17,12 +20,15 @@ const Header = React.forwardRef((props, ref) => {
     scrollToCertificate,
   } = props;
 
+  // Languajes
+  const [t, i18n] = useTranslation("global")
+
   // Navigate
   const navigate = useNavigate();
 
   return (
     <section ref={ref}>
-      <header className="flex h-20 items-center justify-around bg-transparend fixed top-0 left-0 w-full z-50">
+      <header className="mt-5 flex h-20 items-center justify-around bg-transparend fixed top-0 left-0 w-full z-50">
         <button onClick={scrollToHeroSection} className="w-1/2 max-w-[300px]">
           {/* <img src="icons/logo.svg" className="block w-full" /> */}
           <header className="resume__subheader mt-5">
@@ -47,7 +53,7 @@ const Header = React.forwardRef((props, ref) => {
               onClick={scrollToAbout}
               className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
-              About Me
+              {t("header.about")}
             </button>
           </li>
 
@@ -96,6 +102,9 @@ const Header = React.forwardRef((props, ref) => {
             </button>
           </li>
         </ul>
+
+        <button onClick={() => i18n.changeLanguage("es")}>Es</button>
+        <button onClick={() => i18n.changeLanguage("en")}>En</button>
       </header>
     </section>
   );
