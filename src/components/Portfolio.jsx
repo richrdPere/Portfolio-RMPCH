@@ -3,17 +3,25 @@ import React from "react";
 // CSS
 import "../css/portfolio.css";
 
+// Languaje
+import { useTranslation } from "react-i18next";
+
 // eslint-disable-next-line react/display-name
 const Portfolio = React.forwardRef((props, ref) => {
+  // Languajes
+  const [t, i18n] = useTranslation("global");
+
   return (
     <section className="py-16 text-center" ref={ref}>
       <header className="resume__subheader mt-5">
-          <h2 className="resume_subtitle ">
-            <span className="text-4xl  mb-16 md:text-5xl">What i do - <span className="text-green-color">Portfolio</span></span>
-          </h2>
-        </header>
+        <h2 className="resume_subtitle ">
+          <span className="text-4xl  mb-16 md:text-5xl">
+            {t("portafolio.titlePortfolio1")} -{" "}
+            <span className="text-green-color">{t("portafolio.titlePortfolio2")}</span>
+          </span>
+        </h2>
+      </header>
 
-    
       {/* ANTERIOR */}
       {/* <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 ">
         

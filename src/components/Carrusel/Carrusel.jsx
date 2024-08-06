@@ -10,7 +10,7 @@ const Carrusel = ({ array, onClick, isSelected }) => {
         </span>
       </div>
       <div className="px-4 flex gap-4">
-        <img
+        {/* <img
           src={
             institution === "Mary Smith"
               ? "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -20,13 +20,13 @@ const Carrusel = ({ array, onClick, isSelected }) => {
           }
           alt="Author"
           className="object-cover w-12 h-12 rounded-full"
-        />
-        <div className="flex flex-col gap-2 w-full">
+        /> */}
+        <div className="flex flex-col items-center gap-2 w-full">
           <h3 className="text-lg font-bold text-white leading-7 whitespace-normal">
             {title}
           </h3>
           <div className="flex gap-4">
-            <p className="text-sm text-indigo-700 font-semibold">
+            <p className="text-sm text-white font-semibold text-justify">
               {institution}
             </p>
             <p className="text-sm text-green-color font-normal">{date}</p>

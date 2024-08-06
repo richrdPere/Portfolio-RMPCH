@@ -1,13 +1,20 @@
 import React from "react";
 
+// Languaje
+import { useTranslation } from "react-i18next";
+
+
 // eslint-disable-next-line react/display-name
 const ContactMe = React.forwardRef((props, ref) => {
+  // Languajes
+  const [t, i18n] = useTranslation("global");
+
   return (
     <section className="py-16 text-center" ref={ref}>
       <header className="resume__subheader mt-5">
         <h2 className="resume_subtitle ">
           <span className="text-4xl mb-16 md:text-5xl">
-            Get in Touch me - <span className="text-green-color">Contacts</span>
+            {t("contacts.titleContact1")} - <span className="text-green-color">{t("contacts.titleContact2")}</span>
           </span>
         </h2>
       </header>
@@ -15,24 +22,24 @@ const ContactMe = React.forwardRef((props, ref) => {
       <form className="flex flex-wrap justify-between gap-8 px-1 max-w-screen-lg mx-auto">
         <input
           type="text"
-          placeholder="Name"
+          placeholder={`${t("contacts.nameContact")}`}
           className="border-b px-2 py-4 flex-grow basis-60  focus-input"
         />
 
         <input
           type="email"
-          placeholder="Email"
+          placeholder={`${t("contacts.emailContact")}`}
           className="border-b px-2 py-4 flex-grow basis-60 focus-input"
         />
 
         <textarea
-          placeholder="Message"
+          placeholder={`${t("contacts.messageContact")}`}
           className="border px-4 py-6 min-w-full max-w-full w-full min-h-[100px] max-h-60 focus-input"
         ></textarea>
 
         <input
           type="submit"
-          value="Contact me"
+          value={`${t("contacts.buttonMessage")}`}
           className="bg-green-color py-4 px-14 mx-auto cursor-pointer rounded-lg hover:bg-indigo-600"
         />
       </form>
@@ -41,7 +48,7 @@ const ContactMe = React.forwardRef((props, ref) => {
       <div className="resume__subheader mt-10">
         <h3 className="resume_subtitle ">
           <span className="mt-12 text-4xl mb-16 text-center md:text-3xl">
-            Or check my <span className="text-green-color">Social Webs</span>
+          {t("contacts.subTitleContact1")} <span className="text-green-color">{t("contacts.subTitleContact2")}</span>
           </span>
         </h3>
       </div>

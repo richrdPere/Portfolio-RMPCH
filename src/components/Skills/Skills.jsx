@@ -1,40 +1,22 @@
 import React from "react";
 
+// Languaje
+import { useTranslation } from "react-i18next";
+
 // eslint-disable-next-line react/display-name
 const Skills = React.forwardRef((props, ref) => {
+  // Languajes
+  const [t, i18n] = useTranslation("global");
+
   return (
     <section className="py-16 text-center" ref={ref}>
       <header className="resume__subheader mt-5">
         <h2 className="resume_subtitle ">
-          <span className="text-4xl mb-16 md:text-5xl">¡My <span className="text-green-color">Skills! 👇</span></span>
+          <span className="text-4xl mb-16 md:text-5xl">
+          ¡{t("skills.titleSkills1")} <span className="text-green-color">{t("skills.titleSkills2")}! 👇</span>
+          </span>
         </h2>
       </header>
-
-      {/* <div className="bg-card-color py-12 px-8 text-gray-color grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-12 place-items-center">
-        <article className="space-y-4">
-          <p className="text-5xl font-bold ">50%</p>
-
-          <h3 className="text-green-color text-2xl">HTML</h3>
-        </article>
-
-        <article className="space-y-4">
-          <p className="text-5xl font-bold ">70%</p>
-
-          <h3 className="text-green-color text-2xl">CSS</h3>
-        </article>
-
-        <article className="space-y-4">
-          <p className="text-5xl font-bold ">60%</p>
-
-          <h3 className="text-green-color text-2xl">JS</h3>
-        </article>
-
-        <article className="space-y-4">
-          <p className="text-5xl font-bold ">90%</p>
-
-          <h3 className="text-green-color text-2xl">Tailwind</h3>
-        </article>
-      </div> */}
 
       <div className="mt-12 grid gap-8 max-w-md mx-auto md:grid-flow-col md:max-w-none auto-cols-fr">
         <article className="space-y-6">

@@ -1,40 +1,35 @@
 import React from "react";
 
+// Languaje
+import { useTranslation } from "react-i18next";
+
 // eslint-disable-next-line react/display-name
 const About = React.forwardRef((props, ref) => {
+  // Languajes
+  const [t, i18n] = useTranslation("global");
+
   return (
     <section ref={ref} className="py-16 text-center">
       <header className="resume__subheader mt-5">
         <h2 className="resume_subtitle">
-          <span className="text-4xl mb-16 md:text-5xl">About <span className="text-green-color">Me</span></span>
+          <span className="text-4xl mb-16 md:text-5xl">
+            {t("about.titleAbout1")}{" "}
+            <span className="text-green-color">{t("about.titleAbout2")}</span>
+          </span>
         </h2>
       </header>
 
       <p className="mt-8 mb-10 text-xl leading-normal text-gray-color md:w-4/5 md:mx-auto">
-        <span className="text-green-color">HOLA A TODOS,</span> mi nombre es Richard Mikhael Pereira Chinchero, soy un
-        Programador Fullstack orientado al diseño Front-end y con conocimientos
-        en servidor y bases de datos orientados al diseño Back-end. Poseo
-        experiencia en multiples herramientas y tecnologias como Javascript,
-        React, Redux, Node.js, SQL, CSS y python. Aunque mi enfoque esta
-        orientado al desarrollo Front-End, con habilidades solidas en la parte
-        de Back-End.
+        <span className="text-green-color">{t("about.paragraphInitial")} </span>
+        {t("about.firstParagraph")}
       </p>
 
       <p className="mt-5 mb-10 text-xl leading-normal text-gray-color md:w-4/5 md:mx-auto">
-        Me descaco por ser una persona tranquila, proactica y responsable con
-        una gran capacidad para trabajar en equipo, compartir mis conocimientos
-        y aprender nuevas cosas. Mi tiempo como practicante profesional en
-        oficinas de Tecnologias de la Información en algunas empresas me ha
-        permitido desarrollar habilidades para informar, comunicar, obtener
-        enfoque centralizado al momento de resolver problemas y cumplir con las
-        tareas.
+        {t("about.secondParagraph")}
       </p>
 
       <p className="mt-5 mb-16 text-xl leading-normal text-gray-color md:w-4/5 md:mx-auto">
-        Deseo seguir creciendo profesionalmente, conocer nuevas cosas, enfrentar
-        nuevos desafios y contribuir al exito de los proyectos en los que
-        participe. Estoy siempre explorando mejores alternativas y practicando
-        mis habilidades de Desarrollo Web.
+        {t("about.thriedParagraph")}
       </p>
 
       <div className="grid gap-8 justify-center justify-items-center md:grid-cols-3">

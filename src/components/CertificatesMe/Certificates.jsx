@@ -9,11 +9,17 @@ import Carrusel from "../Carrusel/Carrusel";
 import Modal from "../Modal/Modal";
 import CertificateImage from "./CertificateImage";
 
+// Languaje
+import { useTranslation } from "react-i18next";
+
 // eslint-disable-next-line react/display-name
 const Certificates = React.forwardRef((props, ref) => {
   // Props
   // eslint-disable-next-line react/prop-types
   const { certificates } = props;
+
+  // Languajes
+  const [t, i18n] = useTranslation("global");
 
   // Carrusel
   const carruselCertificates = [...certificates, ...certificates];
@@ -39,7 +45,10 @@ const Certificates = React.forwardRef((props, ref) => {
         <header className="resume__subheader mt-5">
           <h2 className="resume_subtitle ">
             <span className="text-4xl mb-16 md:text-5xl">
-              My <span className="text-green-color">Certificates</span>
+              {t("certificates.titleCertificates1")}{" "}
+              <span className="text-green-color">
+                {t("certificates.titleCertificates2")}{" "}
+              </span>
             </span>
           </h2>
         </header>
@@ -63,9 +72,9 @@ const Certificates = React.forwardRef((props, ref) => {
         {/* Modal */}
         {showModal && (
           <Modal>
-            <CertificateImage 
-              onClose={handleCloseModal} 
-              image={selectedCertificate.image} 
+            <CertificateImage
+              onClose={handleCloseModal}
+              image={selectedCertificate.image}
               title={selectedCertificate.title}
               category={selectedCertificate.category}
             />
