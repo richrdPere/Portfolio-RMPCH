@@ -15,16 +15,20 @@ const Header = React.forwardRef((props, ref) => {
     scrollToSkill,
     scrollToHeroSection,
     scrollToCertificate,
+    t,
+    i18n,
   } = props;
 
   // Languajes
-  const [t, i18n] = useTranslation("global");
+  // const [t, i18n] = useTranslation("global");
 
   // States
-  const [isSpanishFirst, setIsSpanishFirst] = useState(false);
+  const [isSpanishFirst, setIsSpanishFirst] = useState(i18n.language === "es");
 
   const handleToggle = () => {
-    setIsSpanishFirst(!isSpanishFirst); // Cambiar el estado para alternar los botones
+    const newLanguage = isSpanishFirst ? "en" : "es"; // Cambiar el estado para alternar los botones
+    i18n.changeLanguage(newLanguage);
+    setIsSpanishFirst(!isSpanishFirst);
   };
 
   return (
@@ -69,19 +73,19 @@ const Header = React.forwardRef((props, ref) => {
 
           <li>
             <button
-              onClick={scrollToSkill}
+              onClick={scrollToPortfolio}
               className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
-              {t("header.skills")}
+              {t("header.portfolio")}
             </button>
           </li>
 
           <li>
             <button
-              onClick={scrollToPortfolio}
+              onClick={scrollToSkill}
               className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
-              {t("header.portfolio")}
+              {t("header.skills")}
             </button>
           </li>
 
@@ -104,52 +108,47 @@ const Header = React.forwardRef((props, ref) => {
           </li>
         </ul>
 
-        <div className="mt-5  h-9  ">
-          {isSpanishFirst ? (
-            <>
-              <button
-                onClick={() => {
-                  i18n.changeLanguage("en");
-                  handleToggle();
-                }}
-              >
-                <img
-                  src="img/iconosPng/usa.png"
-                  alt="Ingles"
-                  style={{ width: "30px", height: "30px" }}
-                />
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                onClick={() => {
-                  i18n.changeLanguage("es");
-                  handleToggle();
-                }}
-              >
-                <img
-                  src="img/iconosPng/spain.png"
-                  alt="Español"
-                  style={{ width: "30px", height: "30px" }}
-                />
-              </button>
+        <button onClick={handleToggle}>
+          <img
+            src={
+              isSpanishFirst
+                ? "img/iconosPng/spain.png"
+                : "img/iconosPng/usa.png"
+            }
+            alt={isSpanishFirst ? "Español" : "Inglés"}
+            style={{ width: "30px", height: "30px" }}
+          />
+        </button>
 
-              {/* <button
-                onClick={() => {
-                  i18n.changeLanguage("es");
-                  handleToggle();
-                }}
-              >
-                <img
-                  src="img/iconosPng/spain.png"
-                  alt="Español"
-                  style={{ width: "30px", height: "30px" }}
-                />
-              </button> */}
-            </>
-          )}
-        </div>
+        {/* {isSpanishFirst ? (
+          <button
+            onClick={() => {
+              i18n.changeLanguage("es");
+              handleToggle();
+            }}
+          >
+            <img
+              src="img/iconosPng/spain.png"
+              alt="Español"
+              style={{ width: "30px", height: "30px" }}
+            />
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              i18n.changeLanguage("en");
+              handleToggle();
+            }}
+          >
+            <img
+              src="img/iconosPng/usa.png"
+              alt="Ingles"
+              style={{ width: "30px", height: "30px" }}
+            />
+          </button>
+        )} */}
+
+        {/* <div className="mt-5  h-9  "></div> */}
       </header>
     </section>
   );

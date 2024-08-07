@@ -23,7 +23,18 @@
   },
   "skills": {
     "titleSkills1": "Mis",
-    "titleSkills2": "Habilidades"
+    "titleSkills2": "Habilidades",
+
+    "article5": "Lenguajes de Programación",
+    "article4": "Frameworks y Librerias",
+    "article3": "API y Bases de Datos",
+    "article2": "Elementos Audiovisuales",
+    "article1": "Otras Habilidades",
+
+    "article_hability4": "Soporte Técnico de PC's y Laptops",
+    "article_hability3": "Recuperación de Datos",
+    "article_hability2": "Analisis en Ciberseguridad",
+    "article_hability1": "Configuración de Redes"
   },
   "portafolio": {
     "titlePortfolio1": "Qué hago",

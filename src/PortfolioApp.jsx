@@ -15,12 +15,16 @@ import Certificates from "./components/CertificatesMe/Certificates";
 import DarkMode from "./components/DarkMode/DarkMode";
 
 // Languages
-
+import { useTranslation } from "react-i18next";
 
 // Data (Datos)
 import { certificates } from "./data/certificates";
+import { skills } from "./data/skills";
 
 function PortfolioApp() {
+  // Languaje
+  const [t, i18n] = useTranslation("global");
+
   // Use states
   const [language, setLanguage] = useState("es"); // Idioma predeterminado
 
@@ -89,6 +93,8 @@ function PortfolioApp() {
         scrollToSkill={scrollToSkill}
         scrollToHeroSection={scrollToHeroSection}
         scrollToCertificate={scrollToCertificate}
+        t={t}
+        i18n={i18n}
         ref={heroSectionRef}
       />
 
@@ -101,11 +107,11 @@ function PortfolioApp() {
         {/* 2.- Curriculum */}
         {/* <Curriculum ref={curriculumMeRef} /> */}
 
-        {/* 3.- Skills */}
-        <Skills ref={skillRef} />
-
-        {/* 4.- What i do */}
+        {/* 3.- What i do */}
         <Portfolio ref={portfolioRef} />
+
+        {/* 4.- Skills */}
+        <Skills skills={skills} ref={skillRef} />
 
         {/* 5.- Certificates */}
         <Certificates certificates={certificates} ref={certificateRef} />

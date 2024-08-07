@@ -23,7 +23,18 @@
   },
   "skills": {
     "titleSkills1": "My",
-    "titleSkills2": "Skills"
+    "titleSkills2": "Skills",
+
+    "article5": "Programming languages",
+    "article4": "Frameworks and Libraries",
+    "article3": "API and Databases",
+    "article2": "Audiovisual Elements",
+    "article1": "Other Skills",
+
+    "article_hability4": "Technical Support for PCs and Laptops",
+    "article_hability3": "Data Carving",
+    "article_hability2": "Cybersecurity Analysis",
+    "article_hability1": "Network Configuration"
   },
   "portafolio": {
     "titlePortfolio1": "What I Do",
