@@ -1,8 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-
-// React-router-dom
-import { useNavigate, Link } from "react-router-dom";
+import React, { useState } from "react";
 
 // Languaje
 import { useTranslation } from "react-i18next";
@@ -21,10 +18,14 @@ const Header = React.forwardRef((props, ref) => {
   } = props;
 
   // Languajes
-  const [t, i18n] = useTranslation("global")
+  const [t, i18n] = useTranslation("global");
 
-  // Navigate
-  const navigate = useNavigate();
+  // States
+  const [isSpanishFirst, setIsSpanishFirst] = useState(false);
+
+  const handleToggle = () => {
+    setIsSpanishFirst(!isSpanishFirst); // Cambiar el estado para alternar los botones
+  };
 
   return (
     <section ref={ref}>
@@ -71,16 +72,7 @@ const Header = React.forwardRef((props, ref) => {
               onClick={scrollToSkill}
               className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
-              Skills
-            </button>
-          </li>
-
-          <li>
-            <button
-              onClick={scrollToCertificate}
-              className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
-            >
-              Certificates
+              {t("header.skills")}
             </button>
           </li>
 
@@ -89,7 +81,16 @@ const Header = React.forwardRef((props, ref) => {
               onClick={scrollToPortfolio}
               className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
-              Portfolio
+              {t("header.portfolio")}
+            </button>
+          </li>
+
+          <li>
+            <button
+              onClick={scrollToCertificate}
+              className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            >
+              {t("header.certificates")}
             </button>
           </li>
 
@@ -98,13 +99,57 @@ const Header = React.forwardRef((props, ref) => {
               onClick={scrollToContact}
               className=" h-9 w-21 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
-              Contact Me
+              {t("header.contact")}
             </button>
           </li>
         </ul>
 
-        <button onClick={() => i18n.changeLanguage("es")}>Es</button>
-        <button onClick={() => i18n.changeLanguage("en")}>En</button>
+        <div className="mt-5  h-9  ">
+          {isSpanishFirst ? (
+            <>
+              <button
+                onClick={() => {
+                  i18n.changeLanguage("en");
+                  handleToggle();
+                }}
+              >
+                <img
+                  src="img/iconosPng/usa.png"
+                  alt="Ingles"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => {
+                  i18n.changeLanguage("es");
+                  handleToggle();
+                }}
+              >
+                <img
+                  src="img/iconosPng/spain.png"
+                  alt="Español"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </button>
+
+              {/* <button
+                onClick={() => {
+                  i18n.changeLanguage("es");
+                  handleToggle();
+                }}
+              >
+                <img
+                  src="img/iconosPng/spain.png"
+                  alt="Español"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </button> */}
+            </>
+          )}
+        </div>
       </header>
     </section>
   );

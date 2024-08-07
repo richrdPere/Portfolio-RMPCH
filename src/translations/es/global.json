@@ -6,5 +6,81 @@
     "curriculum": "Curriculum",
     "portfolio": "Portafolio",
     "contact": "Contáctame"
+  },
+  "hero_section": {
+    "greeting": "Hola, soy Richard Pereira.",
+    "cv": "Descargar CV",
+    "contactMe": "Contáctame",
+    "thanks": "Gracias!"
+  },
+  "about": {
+    "titleAbout1": "Sobre",
+    "titleAbout2": "Mí",
+    "paragraphInitial": "HOLA A TODOS,",
+    "firstParagraph": "mi nombre es Richard Mikhael Pereira Chinchero, soy un Programador Fullstack orientado al diseño Front-end y con conocimientos en servidor y bases de datos orientados al diseño Back-end. Poseo experiencia en múltiples herramientas y tecnologías como Javascript, React, Redux, Node.js, SQL, CSS y python. Aunque mi enfoque está orientado al desarrollo Front-End, con habilidades sólidas en la parte de Back-End.",
+    "secondParagraph": "Me descaco por ser una persona tranquila, proactiva y responsable con una gran capacidad para trabajar en equipo, compartir mis conocimientos y aprender nuevas cosas. Mi tiempo como practicante profesional en oficinas de Tecnologías de la Información en algunas empresas me ha permitido desarrollar habilidades para informar, comunicar, obtener enfoque centralizado al momento de resolver problemas y cumplir con las tareas.",
+    "thriedParagraph": "Deseo seguir creciendo profesionalmente, conocer nuevas cosas, enfrentar nuevos desafios y contribuir al exito de los proyectos en los que participe. Estoy siempre explorando mejores alternativas y practicando mis habilidades de Desarrollo Web."
+  },
+  "skills": {
+    "titleSkills1": "Mis",
+    "titleSkills2": "Habilidades"
+  },
+  "portafolio": {
+    "titlePortfolio1": "Qué hago",
+    "titlePortfolio2": "Portafolio"
+  },
+  "certificates": {
+    "titleCertificates1": "Mis",
+    "titleCertificates2": "Certificados",
+
+    "certificatesName1": "Electronica Básica y General",
+    "certificatesName2": "Reparación de PC de cero a Experto",
+    "certificatesName3": "Recuperación de Datos",
+    "certificatesName4": "Curso maestro de Web Scraping: Extracción de Datos de la Web",
+    "certificatesName5": "Curso de Reparación de Laptops",
+    "certificatesName6": "RPA - Máster Automatizacion de Procesos con UiPath [2023]",
+    "certificatesName7": "Soporte Técnico a Computadoras en Entornos Corporativos",
+    "certificatesName8": "Auditoria de Ciberseguridad con NIST",
+    "certificatesName9": "Base de Datos, SQL y MYSQL",
+    "certificatesName10": "Desarrollo Full Stack",
+
+    "web_programming": "Desarollo Web",
+    "databases": "Bases de Datos",
+    "cybersegurity": "Ciberseguridad",
+    "technical_support": "Soporte Técnico",
+    "rpa_programming": "Programación RPA",
+    "python_programming": "Desarrollo Python",
+
+    "january": "de Enero",
+    "february": "de Frebrero",
+    "march": "de Marzo",
+    "april": "de Abril",
+    "may": "de Mayo",
+    "june": "de Junio",
+    "july": "de Julio",
+    "august": "de Agosto",
+    "september": "de Setiembre",
+    "october": "de Octubre",
+    "november": "de Noviembre",
+    "december": "de Diciembre"
+  },
+  "contacts": {
+    "titleContact1": "Contáctame ",
+    "titleContact2": "Contactos",
+    "nameContact": "Nombre",
+    "emailContact": "Correo electrónico",
+    "messageContact": "Mensaje",
+    "buttonMessage": "Contáctame",
+    "subTitleContact1": "O revisa mis",
+    "subTitleContact2": "Redes Sociales",
+    "sweetAlert1": "¡Por favor, llena todos los campos requeridos..!",
+    "sweetAlert2": "¡Acabas de Contactarme!",
+    "titleSweetAlert2": "¡Bien Hecho!",
+    "alertName": "El nombre es requerido",
+    "alertEmail1": "El correo electrónico es requerido",
+    "alertEmail2": "El correo electrónico no es válido",
+    "alertMessage": "El mensaje es requerido"
+
+
   }
 }

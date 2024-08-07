@@ -6,5 +6,79 @@
     "curriculum": "Curriculum",
     "portfolio": "Portfolio",
     "contact": "Contact Me"
+  },
+  "hero_section": {
+    "greeting": "Hi, I am Richard Pereira.",
+    "cv": "Download CV",
+    "contactMe": "Contact Me",
+    "thanks": "Thanks you!"
+  },
+  "about": {
+    "titleAbout1": "About",
+    "titleAbout2": "Me",
+    "paragraphInitial": "HELLO EVERYONE,",
+    "firstParagraph": "my name is Richard Mikhael Pereira Chinchero, I am a Fullstack Programmer focused on Front-end design and with knowledge in server and databases focused on Back-end design. I have experience in multiple tools and technologies such as Javascript, React, Redux, Node.js, SQL, CSS and Python. Although my focus is oriented towards Front-End development, I have solid skills in the Back-End part.",
+    "secondParagraph": "I stand out for being a calm, proactive and responsible person with a great ability to work in a team, share my knowledge and learn new things. My time as a professional intern in Information Technology offices in some companies has allowed me to develop skills to inform, communicate, obtain a centralized focus when solving problems and accomplish tasks.",
+    "thriedParagraph": "I want to continue growing professionally, learn new things, face new challenges and contribute to the success of the projects I participate in. I am always exploring better alternatives and practicing my Web Development skills."
+  },
+  "skills": {
+    "titleSkills1": "My",
+    "titleSkills2": "Skills"
+  },
+  "portafolio": {
+    "titlePortfolio1": "What I Do",
+    "titlePortfolio2": "Portfolio"
+  },
+  "certificates": {
+    "titleCertificates1": "My",
+    "titleCertificates2": "Certificates",
+
+    "certificatesName1": "Basic and General Electronics",
+    "certificatesName2": "PC Repair from Zero to Expert",
+    "certificatesName3": "Data Carving",
+    "certificatesName4": "Web Scraping Master Course: Extracting Data from the Web",
+    "certificatesName5": "Laptop Repair Course",
+    "certificatesName6": "RPA - Master in Process Automation with UiPath [2023]",
+    "certificatesName7": "Technical Support for Computers in Corporate Environments",
+    "certificatesName8": "Cybersecurity Audit with NIST",
+    "certificatesName9": "Database, SQL and MYSQL",
+    "certificatesName10": "Full Stack Development",
+
+    "web_programming": "Web programming",
+    "databases": "Databases",
+    "cybersegurity": "Cybersecurity",
+    "technical_support": "Technical support",
+    "rpa_programming": "RPA programming",
+    "python_programming": "Python programming",
+
+    "january": "of January",
+    "february": "of February",
+    "march": "of March",
+    "april": "of April",
+    "may": "of May",
+    "june": "of June",
+    "july": "of July",
+    "august": "of August",
+    "september": "of September",
+    "october": "of October",
+    "november": "of November",
+    "december": "of December"
+  },
+  "contacts": {
+    "titleContact1": "Get in Touch me ",
+    "titleContact2": "Contacts",
+    "nameContact": "Name",
+    "emailContact": "Email",
+    "messageContact": "Message",
+    "buttonMessage": "Contact Me",
+    "subTitleContact1": "Or check my",
+    "subTitleContact2": "Social Webs",
+    "sweetAlert1": "Please fill in all required fields..!",
+    "sweetAlert2": "You just contacted me!",
+    "titleSweetAlert2": "Well done!",
+    "alertName": "Name is required",
+    "alertEmail1": "Email is required",
+    "alertEmail2": "Email is not valid",
+    "alertMessage": "The message is required"
   }
 }

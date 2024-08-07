@@ -104,11 +104,11 @@ function PortfolioApp() {
         {/* 3.- Skills */}
         <Skills ref={skillRef} />
 
-        {/* 4.- Certificates */}
-        <Certificates certificates={certificates} ref={certificateRef} />
-
-        {/* 5.- What i do */}
+        {/* 4.- What i do */}
         <Portfolio ref={portfolioRef} />
+
+        {/* 5.- Certificates */}
+        <Certificates certificates={certificates} ref={certificateRef} />
 
         {/* 6.- Contact me */}
         <ContactMe ref={contactMeRef} />
