@@ -72,6 +72,15 @@
     "messageContact": "Mensaje",
     "buttonMessage": "Contáctame",
     "subTitleContact1": "O revisa mis",
-    "subTitleContact2": "Redes Sociales"
+    "subTitleContact2": "Redes Sociales",
+    "sweetAlert1": "¡Por favor, llena todos los campos requeridos..!",
+    "sweetAlert2": "¡Acabas de Contactarme!",
+    "titleSweetAlert2": "¡Bien Hecho!",
+    "alertName": "El nombre es requerido",
+    "alertEmail1": "El correo electrónico es requerido",
+    "alertEmail2": "El correo electrónico no es válido",
+    "alertMessage": "El mensaje es requerido"
+
+
   }
 }

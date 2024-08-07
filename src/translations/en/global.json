@@ -72,6 +72,13 @@
     "messageContact": "Message",
     "buttonMessage": "Contact Me",
     "subTitleContact1": "Or check my",
-    "subTitleContact2": "Social Webs"
+    "subTitleContact2": "Social Webs",
+    "sweetAlert1": "Please fill in all required fields..!",
+    "sweetAlert2": "You just contacted me!",
+    "titleSweetAlert2": "Well done!",
+    "alertName": "Name is required",
+    "alertEmail1": "Email is required",
+    "alertEmail2": "Email is not valid",
+    "alertMessage": "The message is required"
   }
 }

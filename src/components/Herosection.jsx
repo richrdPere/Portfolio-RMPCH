@@ -32,7 +32,7 @@ const Herosection = ({ scrollToContact }) => {
         >
           {/* Download CV */}
           <a
-            href="https://drive.google.com/uc?export=download&id=1tafJGBR1DVqqSqFOKX0eS6Ik36-BaGbI"
+            href="https://drive.google.com/uc?export=download&id=1XWI64y5RyPJR_og-MEOk0hbH9Y_n9YH5"
             className="
               group
               p-5
@@ -53,6 +53,7 @@ const Herosection = ({ scrollToContact }) => {
               duration-100
               hover:bg-indigo-600
               "
+            target="_blank"
           >
             <span
               className="
@@ -78,7 +79,7 @@ const Herosection = ({ scrollToContact }) => {
             </p>
 
             <span className="group-hover:translate-x-0  group-hover:opacity-100 absolute translate-x-full opacity-0  transition-all duration-200">
-            {t("hero_section.thanks")}
+              {t("hero_section.thanks")}
             </span>
 
             <span className="group-hover:w-full absolute right-0 h-full w-5  border-y border-r  border-green-color transition-all duration-500"></span>
@@ -132,7 +133,7 @@ const Herosection = ({ scrollToContact }) => {
             </p>
 
             <span className="group-hover:translate-x-0  group-hover:opacity-100 absolute translate-x-full opacity-0  transition-all duration-200">
-            {t("hero_section.thanks")}
+              {t("hero_section.thanks")}
             </span>
 
             <span className="group-hover:w-full absolute right-0 h-full w-5  border-y border-r  border-green-color transition-all duration-500"></span>

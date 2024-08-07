@@ -1,41 +1,234 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 // Languaje
 import { useTranslation } from "react-i18next";
 
+const initialContactForm = {
+  user_name: "",
+  user_email: "",
+  message: "",
+};
 
 // eslint-disable-next-line react/display-name
 const ContactMe = React.forwardRef((props, ref) => {
   // Languajes
   const [t, i18n] = useTranslation("global");
 
+  // Initial Contact - State
+  const [contactMe, setContactMe] = useState(initialContactForm);
+  const [errors, setErrors] = useState({});
+  const { user_name, user_email, message } = contactMe;
+
+  const onInputChange = ({ target }) => {
+    const { name, value } = target;
+    setContactMe({
+      ...contactMe,
+      [name]: value,
+    });
+  };
+
+  // Validation Form
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!user_name) {
+      newErrors.user_name = t("contacts.alertName");
+    }
+
+    if (!user_email) {
+      newErrors.user_email = t("contacts.alertEmail1");
+    } else if (!/\S+@\S+\.\S+/.test(user_email)) {
+      newErrors.user_email = t("contacts.alertEmail2");
+    }
+
+    if (!message) {
+      newErrors.message = t("contacts.alertMessage");
+    }
+
+    return newErrors;
+  };
+
+  // Email
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    // Validator Error
+    const validationErrors = validateForm();
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+
+      // Erroneo
+      Swal.fire({
+        icon: "error",
+        title: "Uups...",
+        text: t("contacts.sweetAlert1"),
+        confirmButtonColor: "#27AE60",
+        confirmButtonText: "OK",
+      });
+    } else {
+      // Reiniciar Errores
+      setErrors({});
+
+      // Envio de Correo
+      emailjs
+        .sendForm("service_dkuu6t1", "template_amtu82m", form.current, {
+          publicKey: "a0_FWsD6ngJufJBUi",
+        })
+        .then(
+          () => {
+            // Confirmación
+            Swal.fire({
+              icon: "success",
+              title: t("contacts.titleSweetAlert2"),
+              text: t("contacts.sweetAlert2"),
+              confirmButtonColor: "#27AE60",
+              confirmButtonText: "OK",
+            });
+
+            // Reiniciar el Form
+            setContactMe(initialContactForm);
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+    }
+  };
+
   return (
     <section className="py-16 text-center" ref={ref}>
       <header className="resume__subheader mt-5">
         <h2 className="resume_subtitle ">
           <span className="text-4xl mb-16 md:text-5xl">
-            {t("contacts.titleContact1")} - <span className="text-green-color">{t("contacts.titleContact2")}</span>
+            {t("contacts.titleContact1")} -{" "}
+            <span className="text-green-color">
+              {t("contacts.titleContact2")}
+            </span>
           </span>
         </h2>
       </header>
 
-      <form className="flex flex-wrap justify-between gap-8 px-1 max-w-screen-lg mx-auto">
-        <input
+      <form
+        onSubmit={sendEmail}
+        ref={form}
+        className="flex flex-wrap justify-between gap-8 px-1 max-w-screen-lg mx-auto"
+      >
+        {/* Name */}
+        <div className="bg-color-background border-b px-2 py-4 flex-grow basis-60 focus-input">
+          <div className="relative bg-inherit ">
+            <input
+              type="text"
+              id="user_name"
+              name="user_name"
+              className="peer bg-transparent h-10 w-full rounded-lg text-gray-200 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-green-color focus:outline-none focus:border-rose-600"
+              placeholder={`${t("contacts.nameContact")}`}
+              value={user_name}
+              onChange={onInputChange}
+            />
+            <label
+              htmlFor="user_name"
+              className="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-green-color peer-focus:text-sm transition-all"
+            >
+              {t("contacts.nameContact")}
+            </label>
+          </div>
+
+          {errors.user_name && (
+            <label className="text-red-600 ">{errors.user_name}</label>
+          )}
+        </div>
+
+        {/* <input
           type="text"
           placeholder={`${t("contacts.nameContact")}`}
           className="border-b px-2 py-4 flex-grow basis-60  focus-input"
+          name="user_name"
+          value={user_name}
+          onChange={onInputChange}
         />
+        {errors.user_name && (
+          <label className="text-red-600 flex-grow basis-60">{errors.user_name}</label>
+        )} */}
 
-        <input
-          type="email"
+        {/* Email */}
+        <div className="bg-color-background border-b px-2 py-4 flex-grow basis-60 focus-input">
+          <div className="relative bg-inherit ">
+            <input
+              type="text"
+              id="user_email"
+              name="user_email"
+              className="peer bg-transparent h-10 w-full rounded-lg text-gray-200 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-green-color focus:outline-none focus:border-rose-600"
+              placeholder={`${t("contacts.emailContact")}`}
+              value={user_email}
+              onChange={onInputChange}
+            />
+            <label
+              htmlFor="user_email"
+              className="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-green-color peer-focus:text-sm transition-all"
+            >
+              {t("contacts.emailContact")}
+            </label>
+          </div>
+
+          {errors.user_email && (
+            <label className="text-red-600 ">{errors.user_email}</label>
+          )}
+        </div>
+
+        {/* <input
+          type="text"
           placeholder={`${t("contacts.emailContact")}`}
           className="border-b px-2 py-4 flex-grow basis-60 focus-input"
+          value={user_email}
+          onChange={onInputChange}
+          name="user_email"
         />
+        {errors.user_email && (
+          <p style={{ color: "red" }}>{errors.user_email}</p> 
+        )}*/}
 
-        <textarea
-          placeholder={`${t("contacts.messageContact")}`}
-          className="border px-4 py-6 min-w-full max-w-full w-full min-h-[100px] max-h-60 focus-input"
-        ></textarea>
+        {/* Mensaje */}
+        {/* <div className="bg-color-background border-b px-2 py-4 flex-grow basis-60 focus-input">
+          <div className="relative bg-inherit ">
+            <textarea
+              id="message"
+              name="message"
+              placeholder={`${t("contacts.messageContact")}`}
+              className="peer bg-transparent h-10 w-full rounded-lg text-gray-200 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-green-color focus:outline-none focus:border-rose-600"
+              value={message}
+              onChange={onInputChange}
+            ></textarea>
+
+            <label
+              htmlFor="message"
+              className="absolute cursor-text left-0 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-green-color peer-focus:text-sm transition-all"
+            >
+              {t("contacts.messageContact")}
+            </label>
+          </div>
+
+          {errors.message && (
+            <label className="text-red-600 ">{errors.message}</label>
+          )}
+        </div> */}
+
+        <div className="border-b px-4 py-4 min-w-full max-w-full w-full min-h-[100px] max-h-60">
+          <textarea
+            id="message"
+            name="message"
+            placeholder={`${t("contacts.messageContact")}`}
+            className="border px-4 py-2 min-w-full max-w-full w-full min-h-[100px] max-h-60 focus-input"
+            value={message}
+            onChange={onInputChange}
+          ></textarea>
+
+          {errors.message && <p className="text-red-600 ">{errors.message}</p>}
+        </div>
 
         <input
           type="submit"
@@ -44,11 +237,13 @@ const ContactMe = React.forwardRef((props, ref) => {
         />
       </form>
 
-
       <div className="resume__subheader mt-10">
         <h3 className="resume_subtitle ">
           <span className="mt-12 text-4xl mb-16 text-center md:text-3xl">
-          {t("contacts.subTitleContact1")} <span className="text-green-color">{t("contacts.subTitleContact2")}</span>
+            {t("contacts.subTitleContact1")}{" "}
+            <span className="text-green-color">
+              {t("contacts.subTitleContact2")}
+            </span>
           </span>
         </h3>
       </div>
@@ -59,7 +254,7 @@ const ContactMe = React.forwardRef((props, ref) => {
         <a
           className="text-gray-700 hover:text-green-color"
           aria-label="Visit TrendyMinds Github"
-          href=""
+          href="https://github.com/richrdPere"
           target="_blank"
         >
           <svg
@@ -97,7 +292,7 @@ const ContactMe = React.forwardRef((props, ref) => {
         <a
           className="text-gray-700 hover:text-green-color"
           aria-label="Visit TrendyMinds LinkedIn"
-          href=""
+          href="https://www.linkedin.com/in/richard-pereira-17b78b299/"
           target="_blank"
         >
           <svg
@@ -115,7 +310,7 @@ const ContactMe = React.forwardRef((props, ref) => {
         <a
           className="text-gray-700 hover:text-green-color"
           aria-label="Visit TrendyMinds Facebook"
-          href=""
+          href="https://www.facebook.com/richardmikhael.pereirachinchero/"
           target="_blank"
         >
           <svg
@@ -134,7 +329,7 @@ const ContactMe = React.forwardRef((props, ref) => {
         <a
           className="text-gray-700 hover:text-green-color"
           aria-label="Visit TrendyMinds Instagram"
-          href=""
+          href="https://www.instagram.com/ridpereirachinchero/"
           target="_blank"
         >
           <svg
@@ -153,7 +348,7 @@ const ContactMe = React.forwardRef((props, ref) => {
         <a
           className="text-gray-700 hover:text-green-color"
           aria-label="Visit TrendyMinds Twitter"
-          href=""
+          href="#"
           target="_blank"
         >
           <svg
