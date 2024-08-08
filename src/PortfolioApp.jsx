@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import About from "./components/About";
-import Portfolio from "./components/Portfolio";
+import Portfolio from "./components/Portfolio/Portfolio";
 import Skills from "./components/Skills/Skills";
 import ContactMe from "./components/ContactMe";
 //import Curriculum from "./components/Curriculum";
