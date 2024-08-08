@@ -20,6 +20,7 @@ import { useTranslation } from "react-i18next";
 // Data (Datos)
 import { certificates } from "./data/certificates";
 import { skills } from "./data/skills";
+import { proyects } from "./data/proyects";
 
 function PortfolioApp() {
   // Languaje
@@ -108,7 +109,7 @@ function PortfolioApp() {
         {/* <Curriculum ref={curriculumMeRef} /> */}
 
         {/* 3.- What i do */}
-        <Portfolio ref={portfolioRef} />
+        <Portfolio proyects={proyects} ref={portfolioRef} />
 
         {/* 4.- Skills */}
         <Skills skills={skills} ref={skillRef} />

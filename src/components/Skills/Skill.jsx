@@ -19,11 +19,11 @@ const Skill = ({ skill, t }) => {
       </h3>
 
       {id === 1 ? (
-        <div className="flex flex-row items-center mb-2  space-y-2 md:flex-col">
+        <div className="items-start mb-2  space-y-2 md:flex-col">
           {technologies.map((tecno, index) => (
             <p
               key={index}
-              className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-green-color mr-2"
+              className="inline-block bg-green-color rounded-full px-3 py-1 text-sm font-semibold text-black mr-2"
             >
               #{t(`skills.article_hability${index + 1}`)}
             </p>
@@ -34,7 +34,7 @@ const Skill = ({ skill, t }) => {
           {technologies.map((tecno, index) => (
             <p
               key={index}
-              className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-green-color mr-2"
+              className="inline-block bg-green-color rounded-full px-3 py-1 text-sm font-semibold text-black mr-2"
             >
               #{tecno}
             </p>
