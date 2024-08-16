@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Skills from "./components/Skills/Skills";
-import ContactMe from "./components/ContactMe";
+import ContactMe from "./components/ContactMe/ContactMe";
 //import Curriculum from "./components/Curriculum";
 import Herosection from "./components/Herosection";
 import Certificates from "./components/CertificatesMe/Certificates";

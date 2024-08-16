@@ -31,7 +31,7 @@ const Skill = ({ skill, t }) => {
           ))}
         </div>
       ) : (
-        <div className="flex flex-row items-center mb-2  space-y-2 md:flex-col">
+        <div className="items-start mb-2  space-y-2 md:flex-col">
           {technologies.map((tecno, index) => (
             <p
               key={index}
