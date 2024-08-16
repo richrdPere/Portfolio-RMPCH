@@ -24,6 +24,15 @@ const Header = React.forwardRef((props, ref) => {
 
   // States
   const [isSpanishFirst, setIsSpanishFirst] = useState(i18n.language === "es");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   const handleToggle = () => {
     const newLanguage = isSpanishFirst ? "en" : "es"; // Cambiar el estado para alternar los botones
@@ -45,18 +54,19 @@ const Header = React.forwardRef((props, ref) => {
           </header>
         </button>
 
-        <input type="checkbox" id="menu" className="peer/menu hidden" />
+        <input  type="checkbox" id="menu" className="peer/menu hidden" />
 
         <label
           htmlFor="menu"
+          onClick={toggleMenu}
           className="w-10 h-10 bg-open-menu bg-cover bg-center bg-green-color rounded-lg  cursor-pointer peer-checked/menu:bg-close-menu transition-all z-40 md:hidden"
         ></label>
 
         <ul className="fixed inset-0 bg-menu-color px-[5%] grid gap-6 auto-rows-max content-center justify-items-center clip-circle-0 peer-checked/menu:clip-circle-full transition-[clip-path] duration-500 md:clip-circle-full md:relative md:grid-flow-col md:p-0 md:bg-transparent">
           <li>
             <button
-              onClick={scrollToAbout}
-              className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative  cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+              onClick={()=> {scrollToAbout(); closeMenu()}}
+              className=" h-9 w-20 hover:text-green-color flex items-center justify-center relative cursor-pointer  before:bg-green-color hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             >
               {t("header.about")}
             </button>
@@ -119,36 +129,6 @@ const Header = React.forwardRef((props, ref) => {
             style={{ width: "30px", height: "30px" }}
           />
         </button>
-
-        {/* {isSpanishFirst ? (
-          <button
-            onClick={() => {
-              i18n.changeLanguage("es");
-              handleToggle();
-            }}
-          >
-            <img
-              src="img/iconosPng/spain.png"
-              alt="Español"
-              style={{ width: "30px", height: "30px" }}
-            />
-          </button>
-        ) : (
-          <button
-            onClick={() => {
-              i18n.changeLanguage("en");
-              handleToggle();
-            }}
-          >
-            <img
-              src="img/iconosPng/usa.png"
-              alt="Ingles"
-              style={{ width: "30px", height: "30px" }}
-            />
-          </button>
-        )} */}
-
-        {/* <div className="mt-5  h-9  "></div> */}
       </header>
     </section>
   );

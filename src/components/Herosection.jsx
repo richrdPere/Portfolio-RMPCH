@@ -28,7 +28,7 @@ const Herosection = ({ scrollToContact }) => {
 
         <div
           className="grid 
-                    grid-cols-[repeat(auto-fit,minmax(170px,1fr))] auto-rows-[60px] gap-8 max-w-lg mx-auto md:mx-0"
+                    grid-cols-[repeat(auto-fit,minmax(170px,1fr))] auto-rows-[60px] gap-8 max-w-lg mx-auto md:mx-0 sd:items-center"
         >
           {/* Download CV */}
           <a
