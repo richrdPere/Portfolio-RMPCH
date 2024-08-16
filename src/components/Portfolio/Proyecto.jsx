@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const Proyecto = ({ proyect, t }) => {
   // Props - Proyect
@@ -11,22 +12,52 @@ const Proyecto = ({ proyect, t }) => {
     technologies,
     link_github,
     link_deploy,
+    link_video,
   } = proyect;
+
+  const thisHaveVideo = (link) => {
+    if (link === "") {
+      Swal.fire({
+        title: "¡Lo sentimos..! 😞",
+        text: "El video de este proyecto aun no esta disponible",
+        icon: "question",
+        confirmButtonColor: "#27AE60",
+        confirmButtonText: "OK",
+      });
+    } else {
+      // Abre el enlace en una nueva pestaña
+      window.open(link, "_blank");
+    }
+  };
+
+  const thisHaveDeploy = (link) => {
+    if (link === "") {
+      Swal.fire({
+        title: "¡Lo sentimos..! 😞",
+        text: "El proyecto aun no esta en Producción",
+        icon: "question",
+        confirmButtonColor: "#27AE60",
+        confirmButtonText: "OK",
+      });
+    } else {
+      // Abre el enlace en una nueva pestaña
+      window.open(link, "_blank");
+    }
+  };
 
   return (
     <div className="  rounded bg-card-color overflow-hidden shadow-lg flex flex-col ">
       <a href="#"></a>
       {/* Imagen */}
       <div className="relative ">
-        <a href="#">
+        <button onClick={() => thisHaveDeploy(link_deploy)}>
           <img className="w-full " src={img} alt={`${title} img`} />
           <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
-        </a>
-        <a href="#!">
-          <div className="text-xs absolute rounded-lg top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 ">
-            {category}
-          </div>
-        </a>
+        </button>
+        
+        <div className="text-xs absolute rounded-lg top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 ">
+          {category}
+        </div>
       </div>
 
       {/* Title and description */}
@@ -65,13 +96,13 @@ const Proyecto = ({ proyect, t }) => {
               viewBox="0 0 73 73"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-10 rounded-full hover:bg-sky-500 transition duration-500 ease-in-out inline-block"
+              className="h-10 rounded-full hover:bg-green-color transition duration-500 ease-in-out inline-block"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
@@ -80,21 +111,21 @@ const Proyecto = ({ proyect, t }) => {
                 <g
                   id="team-collaboration/version-control/github"
                   stroke="none"
-                  stroke-width="1"
+                  strokeWidth="1"
                   fill="none"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                 >
                   {" "}
                   <g
                     id="container"
                     transform="translate(2.000000, 2.000000)"
-                    fill-rule="nonzero"
+                    fillRule="nonzero"
                   >
                     {" "}
                     <rect
                       id="mask"
                       stroke="#000000"
-                      stroke-width="2"
+                      strokeWidth="2"
                       fill="#000000"
                       x="-1"
                       y="-1"
@@ -118,58 +149,9 @@ const Proyecto = ({ proyect, t }) => {
           </span>
         </a>
 
-        {/* Deploy */}
-        {/* <a href="link_deploy" target="_blank">
-          <span
-            href="#"
-            className="text-xs  font-regular text-gray-200 mr-1 flex flex-row items-center"
-          >
-            <svg
-              fill="#000000"
-              width="64px"
-              height="64px"
-              viewBox="0 0 36.00 36.00"
-              version="1.1"
-              preserveAspectRatio="xMidYMid meet"
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-10 rounded-full hover:bg-sky-500 transition duration-500 ease-in-out inline-block"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-
-              <g id="SVGRepo_iconCarrier">
-                {" "}
-                <title>deploy-solid</title>{" "}
-                <path
-                  class="clr-i-solid clr-i-solid-path-1"
-                  d="M33,2H22.1a1,1,0,0,0,0,2h8.53l-8.82,9a1,1,0,1,0,1.43,1.4L32,5.46V13.9a1,1,0,0,0,2,0V3A1,1,0,0,0,33,2Z"
-                />
-                <path
-                  class="clr-i-solid clr-i-solid-path-2"
-                  d="M12.46,10.73a1,1,0,0,0-1,0l-8.68,5L12,21l9.19-5.26Z"
-                />
-                <path
-                  class="clr-i-solid clr-i-solid-path-3"
-                  d="M2,27.73a1,1,0,0,0,.5.87L11,33.46v-11L2,17.28Z"
-                />
-                <path
-                  class="clr-i-solid clr-i-solid-path-4"
-                  d="M13,33.46l8.5-4.86a1,1,0,0,0,.5-.87V17.29l-9,5.15Z"
-                />{" "}
-                <rect x="0" y="0" width="36" height="36" fill-opacity="0" />{" "}
-              </g>
-            </svg>
-          </span>
-        </a> */}
-
         {/* Video */}
 
-        <a href="" target="_blank">
+        <button onClick={() => thisHaveVideo(link_video)}>
           <span
             href="#"
             className="text-xs font-regular text-gray-200 mr-1 flex flex-row items-center"
@@ -180,14 +162,14 @@ const Proyecto = ({ proyect, t }) => {
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-10 rounded-full hover:bg-sky-500 transition duration-500 ease-in-out inline-block"
+              className="h-10 rounded-full hover:bg-green-color transition duration-500 ease-in-out inline-block"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0" />
+              <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
 
               <g id="SVGRepo_iconCarrier">
@@ -195,14 +177,14 @@ const Proyecto = ({ proyect, t }) => {
                 <path
                   d="M16 10L18.5768 8.45392C19.3699 7.97803 19.7665 7.74009 20.0928 7.77051C20.3773 7.79703 20.6369 7.944 20.806 8.17433C21 8.43848 21 8.90095 21 9.8259V14.1741C21 15.099 21 15.5615 20.806 15.8257C20.6369 16.056 20.3773 16.203 20.0928 16.2295C19.7665 16.2599 19.3699 16.022 18.5768 15.5461L16 14M6.2 18H12.8C13.9201 18 14.4802 18 14.908 17.782C15.2843 17.5903 15.5903 17.2843 15.782 16.908C16 16.4802 16 15.9201 16 14.8V9.2C16 8.0799 16 7.51984 15.782 7.09202C15.5903 6.71569 15.2843 6.40973 14.908 6.21799C14.4802 6 13.9201 6 12.8 6H6.2C5.0799 6 4.51984 6 4.09202 6.21799C3.71569 6.40973 3.40973 6.71569 3.21799 7.09202C3 7.51984 3 8.07989 3 9.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z"
                   stroke="#000000"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />{" "}
               </g>
             </svg>
           </span>
-        </a>
+        </button>
       </div>
     </div>
   );

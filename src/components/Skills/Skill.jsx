@@ -18,6 +18,7 @@ const Skill = ({ skill, t }) => {
         {t(`skills.article${id}`)}
       </h3>
 
+      {/* Tecnologies */}
       {id === 1 ? (
         <div className="items-start mb-2  space-y-2 md:flex-col">
           {technologies.map((tecno, index) => (
