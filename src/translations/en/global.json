@@ -38,7 +38,35 @@
   },
   "portafolio": {
     "titlePortfolio1": "What I Do",
-    "titlePortfolio2": "Portfolio"
+    "titlePortfolio2": "Portfolio",
+
+    "videoAlert_title": "¡We're sorry..! 😞",
+    "videoAlert_message": "The video of this project is not yet available",
+
+    "deployAlert_title": "¡We're sorry..! 😞",
+    "deployAlert_message": "The project is not yet in Deployment",
+
+    "title_Proyect1": "Cards - Rick and Morty",
+    "description_Proyect1": "Web application developed during the HENRY 2024 bootcamp.",
+
+    "title_Proyect2": "Travel Abroad",
+    "description_Proyect2": "Individually developed web application for the individual project (IP) - HENRY 2024.",
+
+    "title_Proyect3": "World Champions",
+    "description_Proyect3": "Web application developed in a group for the final project (PF) - HENRY 2024.",
+
+    "title_Proyect4": "GuitarLA",
+    "description_Proyect4": "Lading page for the sale of guitars as a practice experiment with a new language, Typescript.",
+
+    "title_Proyect5": "Coffee Bloq",
+    "description_Proyect5": "Website for a coffee shop that offers blogs and courses on how to prepare different cups of coffee.",
+
+    "title_Proyect6": "Calorie Counter",
+    "description_Proyect6": "Lading page to record the calories obtained by a person. It works as a calculator for the total calories obtained from food or exercise.",
+
+    "title_Proyect7": "Tip and Consumption Calculator",
+    "description_Proyect7": "Lading page that simulates the charge for one or more dishes in a restaurant, with the additional calculation called tip."
+
   },
   "certificates": {
     "titleCertificates1": "My",

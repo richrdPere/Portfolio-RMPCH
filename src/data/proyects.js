@@ -76,7 +76,7 @@ export const proyects = [
     id: 1,
     img: "https://i.ibb.co/K2HphSC/proyecto-1.jpg",
     category: "web",
-    title: "Cards - Rick and Morty",
+    title: "Cartas - Rick and Morty",
     description:
       "Aplicaciòn web desarrollada durante el bootcam de HENRY 2024.",
     technologies: ["React", "CSS3", "HTML", "Express", "Sequelize"],

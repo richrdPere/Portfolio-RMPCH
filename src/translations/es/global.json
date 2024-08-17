@@ -38,7 +38,35 @@
   },
   "portafolio": {
     "titlePortfolio1": "Qué hago",
-    "titlePortfolio2": "Portafolio"
+    "titlePortfolio2": "Portafolio",
+
+    "videoAlert_title": "¡Lo sentimos..! 😞",
+    "videoAlert_message": "El video de este proyecto aun no esta disponible",
+
+    "deployAlert_title": "¡Lo sentimos..! 😞",
+    "deployAlert_message": "El proyecto aun no esta en Producción",
+
+    "title_Proyect1": "Cartas - Rick and Morty",
+    "description_Proyect1": "Aplicaciòn web desarrollada durante el bootcam de HENRY 2024.",
+
+    "title_Proyect2": "Viajes al Extranjero",
+    "description_Proyect2": "Aplicaciòn web desarrollada individualmente para el proyecto individual(PI) - HENRY 2024.",
+
+    "title_Proyect3": "Campeones del Mundo",
+    "description_Proyect3": "Aplicaciòn web desarrollada en grupo para el proyecto final(PF) - HENRY 2024.",
+
+    "title_Proyect4": "GuitarLA",
+    "description_Proyect4": "Página web para la venta de Guitarras a modo de practica experimentando con un nuevo lenguaje, Typescript.",
+
+    "title_Proyect5": "Bloq Café",
+    "description_Proyect5": "Pagina Web para una cafeteria en la que ofrece bloqs y cursos para preparar diferentes tazas de café.",
+
+    "title_Proyect6": "Contador de Calorias",
+    "description_Proyect6": "Página web para registrar las calorias obtenidas por una persona. Funciona como una calculadora para el total de calorias obtenidas en alimentos o ejercicios.",
+
+    "title_Proyect7": "Calculadora de Propinas y Consumo",
+    "description_Proyect7": "Página web que simula el cobro por uno o varios platillos en un restaurante, con el calculo adicional llamado propina."
+
   },
   "certificates": {
     "titleCertificates1": "Mis",

@@ -18,8 +18,8 @@ const Proyecto = ({ proyect, t }) => {
   const thisHaveVideo = (link) => {
     if (link === "") {
       Swal.fire({
-        title: "¡Lo sentimos..! 😞",
-        text: "El video de este proyecto aun no esta disponible",
+        title: t("portafolio.videoAlert_title"),
+        text: t("portafolio.videoAlert_message"),
         icon: "question",
         confirmButtonColor: "#27AE60",
         confirmButtonText: "OK",
@@ -33,8 +33,8 @@ const Proyecto = ({ proyect, t }) => {
   const thisHaveDeploy = (link) => {
     if (link === "") {
       Swal.fire({
-        title: "¡Lo sentimos..! 😞",
-        text: "El proyecto aun no esta en Producción",
+        title: t("portafolio.deployAlert_title"),
+        text: t("portafolio.deployAlert_message"),
         icon: "question",
         confirmButtonColor: "#27AE60",
         confirmButtonText: "OK",
@@ -54,7 +54,7 @@ const Proyecto = ({ proyect, t }) => {
           <img className="w-full " src={img} alt={`${title} img`} />
           <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
         </button>
-        
+
         <div className="text-xs absolute rounded-lg top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 ">
           {category}
         </div>
@@ -66,9 +66,13 @@ const Proyecto = ({ proyect, t }) => {
           href="#"
           className="text-green-color font-bold text-2xl  hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
         >
-          {title}
+          {/* title */}
+          {t(`portafolio.title_Proyect${id}`)}
         </a>
-        <p className="text-white text-1xl ">{description}</p>
+        <p className="text-white text-1xl ">
+          {/* description */}
+          {t(`portafolio.description_Proyect${id}`)}
+        </p>
       </div>
 
       {/* Tecnologies */}
